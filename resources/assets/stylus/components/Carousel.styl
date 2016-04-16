@@ -1,0 +1,40 @@
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+	width 100%
+}
+.subtitle{
+	float: left
+	background: rgba(255, 255, 255, 0.75)
+	color: black
+	text-shadow: none
+	padding: 0.3em 1em
+}
+.carousel{
+	width: 100%
+}
+.carousel-indicators {
+	.active{
+		background-color:$azulHover
+		border-color $azulHover
+	}
+	li{
+		border-radius 0
+		background-color #FFF
+	}
+}
+.title{
+	float: left
+	clear: both
+	text-align: left
+	background-color: rgba(13, 93, 120, 0.75)
+	padding: 0.1em 1.5em
+	font-weight: lighter
+}
+.carousel-caption{
+	font-size: 0.6em
+}
+@media screen and (min-width: 768px){
+	.carousel-caption{
+		left 15%
+		font-size: 1em
+	}
+}

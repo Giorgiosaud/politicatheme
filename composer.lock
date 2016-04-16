@@ -1,0 +1,104 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "bdb98cfa31cd957f45da38d8ea975511",
+    "content-hash": "8bdd4b9c3fad7844d8c5bb6a0791b51a",
+    "packages": [
+        {
+            "name": "jorgelsaud/bootstrap-nav-walker",
+            "version": "v0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giorgiosaud/bootstrapNavWalker.git",
+                "reference": "59ebd10f59f0b951f3936c0dd92d5e20a700586e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giorgiosaud/bootstrapNavWalker/zipball/59ebd10f59f0b951f3936c0dd92d5e20a700586e",
+                "reference": "59ebd10f59f0b951f3936c0dd92d5e20a700586e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jorgelsaud\\WordpressTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giorgiosaud",
+                    "email": "jorgelsaud@gmail.com"
+                }
+            ],
+            "description": "Bootstrap Nav Walker for wordpress",
+            "time": "2016-04-04 21:41:27"
+        },
+        {
+            "name": "salaros/wp-bootstrap-navwalker",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salaros/wp-bootstrap-navwalker.git",
+                "reference": "5176215a022bf44ee11c97efb2c1c2d919086520"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salaros/wp-bootstrap-navwalker/zipball/5176215a022bf44ee11c97efb2c1c2d919086520",
+                "reference": "5176215a022bf44ee11c97efb2c1c2d919086520",
+                "shasum": ""
+            },
+            "suggest": {
+                "johnpbloch/wordpress": "So you can start using menu walker",
+                "twbs/bootstrap": "Bootstrap for your theme which features navbar"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salaros\\Wordpress\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Edward McIntyre",
+                    "email": "edward@edwardmcintyre.com",
+                    "homepage": "http://twitter.com/twittem",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Zhmayev Yaroslav",
+                    "email": "salaros@salaros.com",
+                    "homepage": "http://salaros.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "A custom WordPress nav walker class to fully implement the Twitter Bootstrap 3.0+ navigation style in a custom theme using the WordPress built in menu manager.",
+            "homepage": "https://github.com/salaros/wp-bootstrap-navwalker",
+            "keywords": [
+                "bootstrap",
+                "menu",
+                "navbar",
+                "wordpress"
+            ],
+            "time": "2015-06-29 10:12:20"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

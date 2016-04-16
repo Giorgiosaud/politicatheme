@@ -1,0 +1,6 @@
+$open-sans-path: "../../fonts";
+$icon-font-path:"../../fonts/bootstrap/";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import 'open-sans/scss/open-sans';
+$font-family-base: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+@import 'bootstrap-sass/assets/stylesheets/bootstrap';

@@ -1,0 +1,36 @@
+{
+  "name": "politicaygobierno",
+  "description": "Tema Politica y Gobierno para Pagina en Wordpress",
+  "main": "",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "politica",
+    "gobierno",
+    "wordpresss",
+    "theme"
+  ],
+  "authors": [
+    "Giorgiosaud <jorgelsaud@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "open-sans": "~1.1.0",
+    "open-sans-fontface": "~1.4.2"
+  },
+  "homepage": "http://politicaygobierno.cl",
+  "private": true
+}
