@@ -24,6 +24,7 @@ class Menus{
 		register_nav_menus(array( // Using array to specify more menus if needed
         	'top-menu' => __('Top Menu', 'html5blank'), // Top Navigation
   			'main-menu'=>__('Main Menu', 'html5blank'), // Main Navigation
+  			'bottom-menu'=>__('Bottom Menu', 'html5blank'), // Main Navigation
 
   		));
 	}

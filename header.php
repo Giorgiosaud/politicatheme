@@ -55,12 +55,6 @@
 						<?php
 						main_nav('MainNav');
 						?>
-						<form class="navbar-form navbar-right form-inline" role="search">
-							<div class="form-group">
-								<label for="search">Buscar</label>
-								<input type="text" id="search" name="s" class="form-control" placeholder="Search">
-							</div>
-						</form>
 					</div>
 				</div>
 			</nav>

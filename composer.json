@@ -17,7 +17,8 @@
 	],
 	"require": {
 		"salaros/wp-bootstrap-navwalker": "^2.1",
-		"jorgelsaud/bootstrap-nav-walker": "^0.1.0"
+		"jorgelsaud/bootstrap-nav-walker": "^0.1.0",
+		"tareq1988/wp-eloquent": "dev-master"
 	},
 	"autoload":{
 		"psr-4":{

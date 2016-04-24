@@ -1,12 +1,17 @@
 .carousel-inner > .item > img, .carousel-inner > .item > a > img{
 	width 100%
 }
+#carrouselInicio{
+	box-shadow: #000 -10px -10px 5px -10px
+}
 .subtitle{
 	float: left
 	background: rgba(255, 255, 255, 0.75)
 	color: black
 	text-shadow: none
 	padding: 0.3em 1em
+	text-align: left
+	font-size: 1.4em
 }
 .carousel{
 	width: 100%
@@ -15,6 +20,7 @@
 	.active{
 		background-color:$azulHover
 		border-color $azulHover
+		box-shadow: #FFF 0px 0px 5px
 	}
 	li{
 		border-radius 0
@@ -28,10 +34,73 @@
 	background-color: rgba(13, 93, 120, 0.75)
 	padding: 0.1em 1.5em
 	font-weight: lighter
+	text-transform uppercase
 }
 .carousel-caption{
 	font-size: 0.6em
 }
+.Slider__Noticias__Titulo{
+	border-left: transparent solid 0.3em
+	margin-right: 1em
+	margin-left: 0.4em
+	padding-left: 0.4em
+	align-items: center
+	justify-content: flex-start
+	position relative
+	display: flex
+	border-bottom: #7b7b7b solid 1px
+	z-index 0
+	flex 1
+	&:hover{
+		border-left-color: lighten($azulPolitica,20)
+	}
+	&.active{
+		border-left-color: $azulPolitica
+	}
+	&::after,&::before{
+		content: ''
+		position: absolute
+		width: 10px
+		height: 10px
+		left: -5px
+		background: white
+	}
+	&::after{
+		bottom: -5px
+	}
+	&::before{
+		top: -5px
+	}
+}
+.Slider__Noticias__Titulos
+	box-shadow: 4px -4px 10px -2px
+	cursor pointer
+.carousel-control.right,.carousel-control.left
+	background none
+.carousel-control
+	span
+		&.glyphicon
+			&.glyphicon-menu-right,&.glyphicon-menu-left
+				position: absolute
+				top: 50%
+				font-size: 1.5em
+				background: white
+				padding: 0.3em
+				border-radius: 50%
+
+div#innerSlider
+	position: relative
+	& > .carousel-indicators
+		position: absolute
+		left: 0
+		bottom: 0
+		margin: 0
+		background: gray
+		width: 100%
+		padding: 5px
+
+
+
 @media screen and (min-width: 768px){
 	.carousel-caption{
 		left 15%

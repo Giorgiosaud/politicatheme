@@ -7,3 +7,36 @@
 .Flex--column{
 	flex-direction column
 }
+.Flex__content
+	margin-top: 2em
+.footer
+	background $azulPolitica
+	color #FFF
+	padding: 2em
+	font-size: 0.8em
+	a
+		color #FFF
+a
+	color $azulHover;
+	&:hover,&:active,&:focus
+		color lighten($azulHover,10)
+		text-decoration none
+.pagination
+	margin: 3em 0
+
+a
+	&.next,&.prev
+		&.page-numbers
+			background: $grayPaginate
+			color: white
+			border-radius: 90%
+			padding: 10px
+
+.page-numbers
+	color: $grayPaginate
+	margin: 0 0.5em
+	&.current
+		color: #FFF
+		background: $azulHover
+		padding: 2px
+

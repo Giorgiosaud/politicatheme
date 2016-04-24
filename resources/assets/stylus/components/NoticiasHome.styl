@@ -1,0 +1,87 @@
+.Noticia__imagen{
+	&>img{
+		width 100%
+		height auto
+	}
+}
+.Noticia
+	margin-bottom: 1em
+.Noticia__titulo{
+	height: 6em
+	font-weight: 600
+	font-size: 1.2em
+	margin-top: 1em
+	color: $azulPolitica
+	overflow:scroll;
+	display flex;
+	align-items center
+}
+.Noticia__resumen{
+	height 6em
+	overflow scroll
+}
+
+
+
+.btn-noticia:active, .btn-noticia.active,.open > .btn-noticia.dropdown-toggle
+	color: #fff
+	background-color: #286090
+	border-color: #204d74
+	background-image: none
+
+.btn-noticia:active:hover, .btn-noticia:active:focus, .btn-noticia:active.focus, .btn-noticia.active:hover, .btn-noticia.active:focus, .btn-noticia.active.focus,.open > .btn-noticia.dropdown-toggle:hover,.open > .btn-noticia.dropdown-toggle:focus,.open > .btn-noticia.dropdown-toggle.focus
+	color: #fff
+	background-color: #204d74
+	border-color: #122b40
+
+.btn-noticia
+	color: #fff
+	border-radius 0
+	margin-top 1em
+	background-color: $azulHover
+	border-color: #2e6da4
+	a
+		color: #FFF
+		&:hover,&:active
+			text-decoration none
+.badge
+	color: $azulHover
+	background-color: #fff
+	&:hover
+		color: #fff
+		background-color: #286090
+		border-color: #204d74
+
+.btn-noticia:focus, .btn-noticia.focus,.btn-noticia:hover, .btn-noticia.hover
+	color: #fff
+	background-color: lighten($azulHover,10)
+	border-color: #122b40
+
+.btn-noticia.disabled:hover, .btn-noticia.disabled:focus, .btn-noticia.disabled.focus, .btn-noticia[disabled]:hover, .btn-noticia[disabled]:focus, .btn-noticia[disabled].focus,
+	fieldset[disabled] .btn-noticia:hover,
+	fieldset[disabled] .btn-noticia:focus,
+	fieldset[disabled] .btn-noticia.focus
+	background-color: $azulHover
+	border-color: #2e6da4
+	
+.Noticias__Contenedor__Titulo
+	display: flex
+	width: 100%
+	margin-bottom: 1em
+
+.Noticias__Contenedor__Titulo__Nombre
+	display: flex
+	background: $azulActive
+	color: white
+	text-transform: uppercase
+	padding: 0.5em 1.4em
+
+.Noticias__Contenedor__Titulo__Puntos
+	display: flex
+	flex: 1
+	border-bottom: dashed 2px
+	margin: 15px 1px
+
+
+
+

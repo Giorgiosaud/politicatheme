@@ -1,4 +1,4 @@
-<?php /* Template Name: Pagina Flex */ 
+<?php /* Template Name: Pagina Flex Interna */ 
 use jorgelsaud\PoliticayGobierno\Sliders;
 use jorgelsaud\PoliticayGobierno\Noticias;
 use jorgelsaud\PoliticayGobierno\HTML;
@@ -9,7 +9,7 @@ get_header(); ?>
 	<section>
 		<div class="container-fluid">
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
+				<h1><?php the_title()?></h1>
 				<?php 
 				if( get_field('colocar_slider') ):
 					$sliders=new Sliders(get_field('tipo_de_post'),get_field('cantidad'),get_field('id'));
@@ -62,21 +62,17 @@ get_header(); ?>
 				<!-- /article -->
 
 			<?php endif; ?>
-			<div class="col-xs-12 col-sm-3 widgets-right">
-				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
-					[no widgets Right Panel]
-				<?php endif; ?>
+			<div class="col-xs-12 col-sm-3">
+				<?php get_sidebar('right'); ?>
 			</div>
 			<div class="clearfix"></div>
 			<!-- /Flex__content -->
 		</div>
-		<div class="col-xs-12 widgets-bottom">
-			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-bottom')) : ?>
-					[no widgets Bottom]
-				<?php endif; ?>
+		<div class="col-xs-12">
+			<?php get_sidebar('bottom'); ?>
 		</div>
 		<!-- /container-fluid -->
-	</div>
+		</div>
 </section>
 </main>
 <?php get_footer(); ?>
