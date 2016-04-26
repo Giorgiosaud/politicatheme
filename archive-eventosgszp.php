@@ -4,9 +4,7 @@
 
 <div class="container-flex Eventos__Container">
 	<div class="col-xs-12 col-sm-9">
-		<?php get_template_part('loop-eventos'); ?>
-
-
+		<?php get_template_part('loop','eventos'); ?>
 		<?php get_template_part('pagination'); ?>
 
 	</div>

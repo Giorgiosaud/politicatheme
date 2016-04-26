@@ -7,18 +7,17 @@ if (have_posts()):
 		the_post(); 
 	?>
 
-	<div class="col-xs-12">
-		<div class="Archivo__imagen">
-			<?php the_post_thumbnail()?>
-		</div>
-		<div class="Titulo">
-			<?php the_title() ?>
-		</div>
-		<div class="Resumen text-justify">
-			<?php politica_excerpt('noticias_exp_length','noticias_more') ?>
-		</div>
-		<div class="BotonLeerMas btn btn-noticia">
+	<div class="Estudio__Contenedor">
+		<div class="Estudio__Encabezado">
+			<div class="col-xs-12 Estudio__Titulo">
+				<?php the_title() ?>
+			</div>
+			<div class="BotonLeerMas btn btn-estudio">
 			<a href="<?php the_permalink() ?>">Ver Más</a>
+			</div>
+		</div>
+		<div class="Estudio__Resumen">
+			<?php politica_excerpt('noticias_exp_length','noticias_more') ?>
 		</div>
 	</div>
 	<?php

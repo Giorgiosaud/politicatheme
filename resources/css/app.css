@@ -181,6 +181,9 @@ a.prev.page-numbers {
   background: #005676;
   padding: 2px;
 }
+.text-politica {
+  color: #005676;
+}
 .logo {
   margin: 5px 0;
 }
@@ -650,6 +653,70 @@ fieldset[disabled] .btn-noticia.focus {
 .Evento__titulo > .hora {
   font-weight: 100;
   float: right;
+}
+.Estudios__Imagen {
+  position: relative;
+}
+.Estudios__Subtitulo {
+  margin: 1.5em 0;
+  text-align: justify;
+  position: relative;
+}
+.Estudio__Resumen {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 7;
+  -ms-flex: 7;
+  flex: 7;
+}
+.Estudio__Encabezado {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+.Estudios__Titulo {
+  position: absolute;
+  top: 50%;
+  margin-left: 1em;
+  color: #fff;
+  background: rgba(0,101,138,0.8);
+  padding: 0.2em;
+  font-size: 2.3em;
+  font-weight: bolder;
+  letter-spacing: 0.3em;
+  font-style: italic;
+}
+.Estudio__Contenedor {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.Docentes__Contenedor {
+  margin-top: 1em;
+}
+.Docente__imagen {
+  padding: 0;
+}
+.Docente__imagen img {
+  width: 100%;
+}
+.Docente {
+  margin-bottom: 1em;
+}
+.Docente__Elemento {
+  margin-bottom: 1em;
+  background: #e8e8e8;
+  padding: 0;
+}
+li.estudio {
+  list-style: none;
+  text-align: justify;
+  text-indent: -10px;
+}
+li.estudio:before {
+  content: '- ';
 }
 .single-widget {
   margin: 0.5em 0;

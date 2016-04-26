@@ -14,4 +14,5 @@ jQuery(document).ready(function($) {
         root.find('.left-caret').toggleClass('right-caret left-caret');
         root.find('.sub-menu:visible').hide();
     });
+    $('.active').parents('.dropdown,.dropdown-submenu').addClass('active')
 });

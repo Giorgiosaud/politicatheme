@@ -4,7 +4,7 @@
 
 <div class="container-flex Noticias__Internas__Container">
 	<div class="col-xs-12 col-sm-9">
-		<?php get_template_part('loop'); ?>
+		<?php get_template_part('loop-noticias'); ?>
 
 
 		<?php get_template_part('pagination'); ?>
