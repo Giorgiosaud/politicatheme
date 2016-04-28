@@ -2,14 +2,17 @@
 use jorgelsaud\PoliticayGobierno\Sliders;
 use jorgelsaud\PoliticayGobierno\Noticias;
 use jorgelsaud\PoliticayGobierno\HTML;
+use jorgelsaud\PoliticayGobierno\ImagenFija;
+use jorgelsaud\PoliticayGobierno\PostgradoTipo;
 get_header(); ?>
 
 <main role="main">
 	<!-- section -->
 	<section>
-		<div class="container-fluid">
+		<div class="container inner-container">
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-				<h1><?php the_title()?></h1>
+				<?php if(get_field('incluir_titulo')){
+				?><h1><?php the_title()?></h1><?php }?>
 				<?php 
 				if( get_field('colocar_slider') ):
 					$sliders=new Sliders(get_field('tipo_de_post'),get_field('cantidad'),get_field('id'));
@@ -30,9 +33,18 @@ get_header(); ?>
 										$noticias=new Noticias(get_sub_field('titulo'),get_sub_field('tipo_de_post'),get_sub_field('category'),get_sub_field('cantidad'),get_sub_field('id'));
 										$noticias->show();
 										break;
+										case 'display_postgrado_type':
+										$tipoDePostgrado=new PostgradoTipo(get_sub_field('titulo'),get_sub_field('tipo'));
+										$tipoDePostgrado->show();
+										break;
 										case 'add_html':
 										$html=new HTML(get_sub_field('contenido'),get_sub_field('class'),get_sub_field('link'));
 										$html->show();
+										break;
+										case 'imagen_fija_con_titulo':
+										$imagenFija=new ImagenFija(get_sub_field('imagen'),get_sub_field('titulo'),get_sub_field('sub-titulo'));
+										$imagenFija->show();
+										break;
 
 									}
 								}

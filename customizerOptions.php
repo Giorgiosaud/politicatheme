@@ -16,7 +16,7 @@ class theme_customizer{
 		$this->autoridades_section( $wp_manager );
 		$this->postgrado_section( $wp_manager );
 		$this->pregrado_section( $wp_manager );
-		$this->revistas_section( $wp_manager );
+		$this->publicaciones_section( $wp_manager );
 	}
 	public function agregar_seccion($id,$title,$priority=36)
 	{
@@ -97,28 +97,28 @@ class theme_customizer{
 		$this->agregar_control_imagen_crop('imagen_pregrado','Imagen Superior Area Pregrado','imagen_pregrado','pregrado',900,560);
 	
 	}
-	public function revistas_section($wp_manager)
+	public function publicaciones_section($wp_manager)
 	{
-		$wp_manager->add_section( 'noticias_section', array(
-			'title'          => 'Configuracion de Noticias',
+		$wp_manager->add_section( 'publicaciones_section', array(
+			'title'          => 'Configuracion de Publicaciones',
 			'priority'       => 36,
 		) );
 		$wp_manager->add_setting(
-			'imagen_por_defecto',
+			'Publicaciones_por_defecto',
 			array(
-				'default'      => get_template_directory_uri().'/img/noticia_defecto.png',
+				'default'      => get_template_directory_uri().'/img/imagen_publicaciones_por_defecto.jpg',
 				'width'=>250,
-				'height'=>150
+				'height'=>200
 			)
 		);
 		$wp_manager->add_control(
 			new WP_Customize_Cropped_Image_Control(
 				$wp_manager,
-				'imagen_por_defecto',
+				'Publicaciones_por_defecto',
 				array(
 					'label'    => 'Imagen Noticia Por Defecto',
-					'settings' => 'imagen_por_defecto',
-					'section'  => 'noticias_section',
+					'settings' => 'Publicaciones_por_defecto',
+					'section'  => 'publicaciones_section',
 					'width'=>250,
 					'height'=>150,
 				)

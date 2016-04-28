@@ -1,50 +1,47 @@
 <?php get_header(); ?>
+<div class="container">
+	<div class="col-xs-12 col-sm-9">
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-	<main role="main">
-	<!-- section -->
-	<section>
+			<!-- article -->
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<!-- post thumbnail -->
+				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+					</a>
+				<?php endif; ?>
+				<!-- /post thumbnail -->
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<!-- post title -->
+				<h1>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				</h1>
+				<!-- /post title -->
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+				<!-- post details -->
+				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+				<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				<!-- /post details -->
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
+				<?php the_content(); // Dynamic Content ?>
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
+				<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
-			<?php the_content(); // Dynamic Content ?>
+				<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+				<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+				<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+				<?php comments_template(); ?>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+			</article>
+			<!-- /article -->
 
-			<?php comments_template(); ?>
-
-		</article>
-		<!-- /article -->
-
-	<?php endwhile; ?>
+		<?php endwhile; ?>
 
 	<?php else: ?>
 
@@ -58,10 +55,31 @@
 
 	<?php endif; ?>
 
-	</section>
-	<!-- /section -->
-	</main>
+</div>
+<div class="col-xs-12 col-sm-3 widgets-right">
+	<?php $cats=get_categories(array('taxonomy'=>'events_cat'));
+		?>
+		<div class="Noticias__Internas__Categorias">
+			<div class="Noticias__Internas__Categorias__Titulo">
+				Categorías
+			</div>
+			<div class="Noticias__Internas__Categorias__Lista">
+				<ul>
+					<?php foreach($cats as $cat){
+						?>
+						<li><a href="<?php echo get_term_link($cat->term_id)?>"><?php echo $cat->name ?></a></li>
+						<?php
+					}?>
+				</ul>
+			</div>
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
+				[no widgets Right Panel]
+			<?php endif; ?>
+		</div>
+</div>
+<!-- /section -->
+<div class="clearfix"></div>
+</div>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

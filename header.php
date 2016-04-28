@@ -22,17 +22,16 @@
 
 		<!-- header -->
 		<header class="header clear" role="banner">
-
 			<nav class="TopNav" role="navigation">
 				<?php top_nav(); ?>
 				<div class="clearfix"></div>
 			</nav>
-			<div class="container-fluid">
+			<div class="container">
 				<!-- logo -->
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>">
 						<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img img-responsive">
 					</a>
 				</div>
 			</div>
@@ -40,7 +39,7 @@
 
 			<!-- nav -->
 			<nav class="navbar navbar-politica" role="navigation">
-				<div class="container-fluid">
+				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MainNav">

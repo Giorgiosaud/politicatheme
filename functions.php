@@ -7,8 +7,7 @@ require_once('FlexFunctions/flex-sliders.php');
 require_once('customMenuItems.php');
 require_once('customizerOptions.php');
 require_once('custom-posts/all.php');
-require_once('custom-taxonomies/events-category.php');
-require_once('custom-taxonomies/tipo-de-postgrado.php');
+require_once('custom-taxonomies/all.php');
 require_once('acf-fields/acf-fields.php');
 require_once('widget/eventos-widget.php');
 $i=new Initializer();
@@ -44,8 +43,10 @@ if (function_exists('add_theme_support'))
 	add_image_size('medium', 250, '', true);
 	add_image_size('small', 120, '', true);
 	add_image_size('slider-incio', 850, 400, true);
+	add_image_size('imagen-fija-interna', 960, 560, true);
 	add_image_size('noticia', 250, 150, true);
 	add_image_size('evento', 250, 150, true); 
+	add_image_size('publicacion', 250, 200, true); 
 	add_image_size('profesor', 250, 230, true);
 	add_image_size('mainPregrado',960,560,true);
 	// Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -313,6 +314,9 @@ function noticias_more(){
 }
 function eventos_exp_length(){
 	return 10;
+}
+function publicacion_exp_length(){
+	return 6;
 }
 function noticias_exp_length(){
 	return 20;

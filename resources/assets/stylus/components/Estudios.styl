@@ -9,24 +9,82 @@
 .Estudio__Resumen {
     display: flex;
     flex: 7;
+    padding: 1em 1em 1em 1em
+    margin: 0.5em 0
+    border: solid #DDD 1px
+    background: #eee
+    text-align justify
 }
-
+li.postgrado
+    list-style: none
+    text-align:justify
+    text-indent:-10px
+    &:before
+        content:'<< '
+        font-size .6em
+        color $azulHover
 .Estudio__Encabezado {
+    display flex;
+    align-items center
+    justify-content center
+    flex-direction column
+    color #FFF
     flex: 3;
+    min-width: 250px
+    background: $azulHover
 }
 .Estudios__Titulo {
     position: absolute;
     top: 50%;
+    background: $azulConTransparencia
     margin-left: 1em;
     color: white;
-    background: $azulConTransparencia
     padding: 0.2em;
     font-size: 2.3em;
     font-weight: bolder;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.1em;
     font-style: italic;
 }
+.Estudio__Titulo
+    font-size: 1.7em
+    font-weight: 600
+    font-style: italic
+    padding: 1em
+.btn-estudio
+    background: #FFF
+    border-radius: 0pc
+    color $azulHover
+    padding: 5px 10px
+
+
+
+
 .Estudio__Contenedor {
     display: flex;
     width: 100%;
+    margin-bottom 2em
+    flex-direction column
+}
+.Estudio__Triangulo{
+    display none
+}
+@media (min-width: 620px){
+.Estudio__Contenedor{
+        flex-direction row
+    }
+    }
+@media (min-width: 900px){
+    .Estudio__Contenedor{
+        flex-direction row
+    }
+    .Estudio__Resumen{
+        padding: 1em 1em 1em 10em
+    }
+    .Estudio__Triangulo{
+        display block
+        background: transparent
+        border-color: transparent transparent transparent $azulHover
+        border-style: solid
+        position absolute
+    }
 }
