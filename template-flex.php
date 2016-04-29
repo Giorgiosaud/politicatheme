@@ -2,14 +2,17 @@
 use jorgelsaud\PoliticayGobierno\Sliders;
 use jorgelsaud\PoliticayGobierno\Noticias;
 use jorgelsaud\PoliticayGobierno\HTML;
+use jorgelsaud\PoliticayGobierno\ImagenFija;
+use jorgelsaud\PoliticayGobierno\PostgradoTipo;
 get_header(); ?>
 
 <main role="main">
 	<!-- section -->
 	<section>
-		<div class="container">
+		<div class="container <?php if(is_home()){?>inner-container<?}?>">
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
+				<?php if(get_field('incluir_titulo')){
+				?><h1><?php the_title()?></h1><?php }?>
 				<?php 
 				if( get_field('colocar_slider') ):
 					$sliders=new Sliders(get_field('tipo_de_post'),get_field('cantidad'),get_field('id'));
@@ -30,9 +33,18 @@ get_header(); ?>
 										$noticias=new Noticias(get_sub_field('titulo'),get_sub_field('tipo_de_post'),get_sub_field('category'),get_sub_field('cantidad'),get_sub_field('id'));
 										$noticias->show();
 										break;
+										case 'display_postgrado_type':
+										$tipoDePostgrado=new PostgradoTipo(get_sub_field('titulo'),get_sub_field('tipo'));
+										$tipoDePostgrado->show();
+										break;
 										case 'add_html':
-										$html=new HTML(get_sub_field('contenido'),get_sub_field('class'),get_sub_field('link'));
+										$html=new HTML(get_sub_field('contenido'),get_sub_field('class'));
 										$html->show();
+										break;
+										case 'imagen_fija_con_titulo':
+										$imagenFija=new ImagenFija(get_sub_field('imagen'),get_sub_field('titulo'),get_sub_field('sub-titulo'));
+										$imagenFija->show();
+										break;
 
 									}
 								}
@@ -52,7 +64,7 @@ get_header(); ?>
 			<?php else: ?>
 
 				<!-- article -->
-				<div class="col-xs-12 col-sm-9">
+				<div class="col-xs-12 col-sm-9 No-Margin-Padding">
 					<article>
 
 						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
@@ -62,7 +74,7 @@ get_header(); ?>
 				<!-- /article -->
 
 			<?php endif; ?>
-			<div class="col-xs-12 col-sm-3 widgets-right">
+			<div class="col-xs-12 col-sm-3 No-Margin-Padding">
 				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
 					[no widgets Right Panel]
 				<?php endif; ?>
@@ -70,13 +82,13 @@ get_header(); ?>
 			<div class="clearfix"></div>
 			<!-- /Flex__content -->
 		</div>
-		<div class="col-xs-12 widgets-bottom">
-			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-bottom')) : ?>
-					[no widgets Bottom]
-				<?php endif; ?>
+		<div class="col-xs-12 No-Margin-Padding">
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-Bottom')) : ?>
+				[no widgets Bottom Panel]
+			<?php endif; ?>
 		</div>
 		<!-- /container-fluid -->
-	</div>
+		</div>
 </section>
 </main>
 <?php get_footer(); ?>

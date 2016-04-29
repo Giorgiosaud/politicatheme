@@ -1,7 +1,9 @@
 <?php
 use jorgelsaud\PoliticayGobierno\Sliders;
+if(is_home()){
 $sliders=new Sliders('post',3,'innerSlider');
 $sliders->inner();
+}
 ?>
 <?php 
 if (have_posts()):

@@ -55,9 +55,10 @@ class Noticias{
 			</div>
 			<div class="Noticias__Contenedor">
 				<?php foreach ($this->noticias as $key => $noticia) {
-					if($noticia->imagen==''){
+
+					if(!$noticia->imagen){
 						$noticia->imagen=wp_get_attachment_image_src(get_theme_mod('imagen_por_defecto'),'noticia')[0];
-						if($noticia->imagen=''){
+						if(!$noticia->imagen){
 							$noticia->imagen=get_template_directory_uri().'/img/noticia_defecto.png';
 						}
 					}

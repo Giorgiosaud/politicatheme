@@ -20,7 +20,7 @@ get_header(); ?>
 				endif;
 				?>
 				<div class="Flex__content">
-					<div class="col-xs-12 col-sm-9">
+					<div class="col-xs-12 col-sm-9 No-Margin-Padding">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 							<?php
@@ -64,7 +64,7 @@ get_header(); ?>
 			<?php else: ?>
 
 				<!-- article -->
-				<div class="col-xs-12 col-sm-9">
+				<div class="col-xs-12 col-sm-9 No-Margin-Padding">
 					<article>
 
 						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
@@ -75,13 +75,17 @@ get_header(); ?>
 
 			<?php endif; ?>
 			<div class="col-xs-12 col-sm-3">
-				<?php get_sidebar('right'); ?>
+				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
+					[no widgets Right Panel]
+				<?php endif; ?>
 			</div>
 			<div class="clearfix"></div>
 			<!-- /Flex__content -->
 		</div>
 		<div class="col-xs-12">
-			<?php get_sidebar('bottom'); ?>
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-Bottom')) : ?>
+				[no widgets Bottom Panel]
+			<?php endif; ?>
 		</div>
 		<!-- /container-fluid -->
 		</div>

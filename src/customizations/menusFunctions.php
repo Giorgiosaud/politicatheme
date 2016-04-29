@@ -32,7 +32,7 @@ function main_nav($id)
 		'container'       => 'div',
 		'container_class' => 'collapse navbar-collapse',
 		'container_id'    => $id,
-		'menu_class'      => 'nav navbar-nav',
+		'menu_class'      => 'nav navbar-nav col-xs-12',
 		'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker()
         );

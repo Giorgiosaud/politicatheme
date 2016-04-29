@@ -8,8 +8,7 @@ require_once('customMenuItems.php');
 require_once('customizerOptions.php');
 require_once('custom-posts/all.php');
 require_once('custom-taxonomies/all.php');
-require_once('acf-fields/acf-fields.php');
-require_once('widget/eventos-widget.php');
+require_once('widget/all.php');
 $i=new Initializer();
 /*
  *  Author: Todd Motto | @toddmotto
