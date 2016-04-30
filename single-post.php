@@ -76,6 +76,7 @@
 		[no widgets Right Panel]
 	<?php endif; ?>
 </div>
+</div>
 <!-- /section -->
 <div class="clearfix"></div>
 </div>

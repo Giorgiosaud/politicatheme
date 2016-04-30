@@ -39,7 +39,7 @@ class PostgradoCustomPost{
 		'label'                 => __( 'Postgrado', 'politicaygobierno' ),
 		'description'           => __( 'Postgrado de la Facultad', 'politicaygobierno' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', ),
+		'supports'              => array( 'editor','author','title', 'revisions','excerpt','trackbacks','comments' ),
 		'taxonomies'            => array(  '' ),
 		'hierarchical'          => false,
 		'public'                => true,

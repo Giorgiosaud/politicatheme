@@ -24,6 +24,7 @@
 					}?>
 				</ul>
 			</div>
+			</div>
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
 				[no widgets Right Panel]
 			<?php endif; ?>

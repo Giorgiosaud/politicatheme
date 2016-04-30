@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container">
+<div class="container <?php if(!is_home()){?>inner-container<?}?>">
 	<div class="col-xs-12 col-sm-9">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -76,6 +76,7 @@
 				[no widgets Right Panel]
 			<?php endif; ?>
 		</div>
+</div>
 </div>
 <!-- /section -->
 <div class="clearfix"></div>

@@ -41,10 +41,8 @@
 	left 5%
 }
 .Slider__Noticias__Titulo{
-	border-left: transparent solid 0.3em
 	margin-right: 1em
 	margin-left: 0.4em
-	padding-left: 0.4em
 	align-items: center
 	justify-content: flex-start
 	position relative
@@ -56,21 +54,6 @@
 		border-left-color: lighten($azulPolitica,20)
 	}
 	&.active{
-		border-left-color: $azulPolitica
-	}
-	&::after,&::before{
-		content: ''
-		position: absolute
-		width: 10px
-		height: 10px
-		left: -5px
-		background: white
-	}
-	&::after{
-		bottom: -5px
-	}
-	&::before{
-		top: -5px
 	}
 }
 .Slider__Noticias__Titulos
@@ -84,7 +67,7 @@
 			&.glyphicon-menu-right,&.glyphicon-menu-left
 				position: absolute
 				top: 50%
-				font-size: 1.5em
+				font-size: 0.8em
 				background: white
 				padding: 0.3em
 				border-radius: 50%
@@ -100,11 +83,28 @@ div#innerSlider
 		width: 100%
 		padding: 5px
 
+.active
+	& > .Slider__Noticias__Titulo__Intenro
+		border-left: solid $azulPolitica 5px
+
+.Slider__Noticias__Titulo__Intenro
+	display: flex
+	padding: 3em 0 3em 1em
+
 
 
 @media screen and (min-width: 768px){
 	.carousel-caption{
 		left 5%
 		font-size: 0.8em
+	}
+	.carousel-control{
+		span{
+			&.glyphicon{
+				&.glyphicon-menu-right,&.glyphicon-menu-left{
+					font-size: 1.2em
+				}
+			}
+		}
 	}
 }

@@ -2,7 +2,7 @@
 query_posts( array('posts_per_page=12','post_type' => 'eventosgszp' ));
 if (have_posts()):
 	?>
-<div class="Eventos__Contenedor Eventos__Interno	s">
+<div class="Eventos__Contenedor Eventos__Internos">
 	<?php
 	while (have_posts()):
 		the_post(); 

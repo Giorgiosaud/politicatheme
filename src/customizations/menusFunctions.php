@@ -15,7 +15,7 @@ function top_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul class="TopNav__List">%3$s</ul>',
+		'items_wrap'      => '<div class="container"><ul class="TopNav__List pull-right">%3$s</ul></div>',
 		'depth'           => 0,
 		// 'walker'          => new jorgelsaud\WordpressTools\NavWalker()
 		);

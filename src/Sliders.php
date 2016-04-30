@@ -95,7 +95,11 @@ class Sliders{
 					<?php
 					foreach ($this->slides as $key => $slide) {
 						?>
-						<div class="Slider__Noticias__Titulo Flex--1 <?php if($key==0) {echo 'active';} ?>" data-item="<?php echo $key ?>"><?php echo $slide->title?></div>
+						<div class="Slider__Noticias__Titulo Flex--1 <?php if($key==0) {echo 'active';} ?>" data-item="<?php echo $key ?>">
+							<div class="Slider__Noticias__Titulo__Intenro">
+								<?php echo $slide->title?>
+							</div>
+						</div>
 						<?php
 					}?>
 				</div>

@@ -1,0 +1,42 @@
+.menuInferior
+	text-transform uppercase
+.menuInferior__Hijo
+	background: $menuAbajoShow
+	color: white
+	margin-bottom: 0.1em
+	padding: 0.5em
+	a
+		color: #FFF
+.menuInferior__Padre__Titulo
+	background: #4c76a0
+	color: white
+	padding: 0.5em
+	margin-bottom: 0.1em
+	margin-top: 0.3em
+	&>a
+		color #FFF
+	&>glyphicon
+		margin-right 1em
+.menuInferior__Hijos
+	margin-left: 1em
+	display none
+.menuInferior__Padre__Titulo:after, .menuInferior__Padre__Titulo:before
+	left: 100%
+	border: solid transparent
+	content: " "
+	height: 0
+	width: 0
+	position: absolute
+	pointer-events: none
+.menuInferior__Padre__Titulo
+	position: relative
+	background: $menuAbajoHidden
+	&.active
+		background: $menuAbajoShow
+		&:after
+			border-left-color: $menuAbajoShow
+	&:after
+		border-left-color: $menuAbajoHidden
+		border-width: 21px 0px 12px 9px
+		top: 50%
+		margin-top: -16px

@@ -20,14 +20,16 @@ if($imagen==null){
 				
 			</div>
 		</div>
-		<?php get_template_part('loop','postgrado'); ?>
+		<?php get_template_part('loop','postgrados'); ?>
 		<?php get_template_part('pagination'); ?>
 
 	</div>
+
 	<div class="col-xs-12 col-sm-3 widgets-right">
 		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
 		[no widgets Right Panel]
 		<?php endif; ?>
+	</div>
 	</div>
 
 	<!-- /section -->

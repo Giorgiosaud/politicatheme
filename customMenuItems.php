@@ -7,13 +7,13 @@
  */
 function new_nav_menu_items($items, $args) {
     if($args->theme_location == 'main-menu'){
-       $shop_item = '<li class="spec pull-right"><form class="navbar-form navbar-right form-inline" role="search">
+       $BuscarField = '<li class="spec pull-right"><form class="navbar-form navbar-right form-inline" role="search">
 							<div class="form-group">
 								<label for="search">Buscar</label>
 								<input type="text" id="search" name="s" class="form-control">
 							</div>
 						</form></li>';
-       $items = $items . $shop_item;
+       $items = $items . $BuscarField;
     }
 
     return $items;

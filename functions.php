@@ -18,41 +18,41 @@ $i=new Initializer();
 
 /*------------------------------------*\
 	External Modules/Files
-\*------------------------------------*/
+	\*------------------------------------*/
 
 // Load any external files you have here
 
 /*------------------------------------*\
 	Theme Support
-\*------------------------------------*/
+	\*------------------------------------*/
 
-if (!isset($content_width))
-{
-	$content_width = 900;
-}
+	if (!isset($content_width))
+	{
+		$content_width = 900;
+	}
 
-if (function_exists('add_theme_support'))
-{
+	if (function_exists('add_theme_support'))
+	{
 	// Add Menu Support
-	add_theme_support('menus');
+		add_theme_support('menus');
 
 	// Add Thumbnail Theme Support
-	add_theme_support('post-thumbnails');
-	add_image_size('large', 700, '', true);
-	add_image_size('medium', 250, '', true);
-	add_image_size('small', 120, '', true);
-	add_image_size('slider-incio', 850, 400, true);
-	add_image_size('imagen-fija-interna', 960, 560, true);
-	add_image_size('noticia', 250, 150, true);
-	add_image_size('evento', 250, 150, true); 
-	add_image_size('publicacion', 250, 200, true); 
-	add_image_size('profesor', 250, 230, true);
-	add_image_size('mainPregrado',960,560,true);
+		add_theme_support('post-thumbnails');
+		add_image_size('large', 700, '', true);
+		add_image_size('medium', 250, '', true);
+		add_image_size('small', 120, '', true);
+		add_image_size('slider-incio', 850, 400, true);
+		add_image_size('imagen-fija-interna', 960, 560, true);
+		add_image_size('noticia', 250, 150, true);
+		add_image_size('evento', 250, 150, true); 
+		add_image_size('publicacion', 250, 200, true); 
+		add_image_size('profesor', 250, 230, true);
+		add_image_size('mainPregrado',960,560,true);
 	// Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',
 	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
+	));*/
 
 	// Add Support for Custom Header - Uncomment below if you're going to use
     /*add_theme_support('custom-header', array(
@@ -65,7 +65,7 @@ if (function_exists('add_theme_support'))
 	'wp-head-callback'		=> $wphead_cb,
 	'admin-head-callback'		=> $adminhead_cb,
 	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
+	));*/
 
 	// Enables post and comment RSS feed links to head
 	add_theme_support('automatic-feed-links');
@@ -76,70 +76,70 @@ if (function_exists('add_theme_support'))
 
 /*------------------------------------*\
 	Functions
-\*------------------------------------*/
+	\*------------------------------------*/
 
 // HTML5 Blank navigation
 // 
 // 
 // 
 // 
-function change_post_menu_label() {
-	global $menu;
-	global $submenu;
+	function change_post_menu_label() {
+		global $menu;
+		global $submenu;
 	// die(var_dump($menu));
-	$menu[5][0] = 'Notícias';
-	$menu[5][6] = 'dashicons-megaphone';
-	$submenu['edit.php'][5][0] = 'Todas las Notícias';
-	$submenu['edit.php'][10][0] = 'Añadir Notícias';
+		$menu[5][0] = 'Notícias';
+		$menu[5][6] = 'dashicons-megaphone';
+		$submenu['edit.php'][5][0] = 'Todas las Notícias';
+		$submenu['edit.php'][10][0] = 'Añadir Notícias';
 
-	echo '';
-}
+		echo '';
+	}
 
-function change_post_object_label() {
-	global $wp_post_types;
-	$labels = &$wp_post_types['post']->labels;
-	$labels->name = 'Notícias';
-	$labels->singular_name = 'Notícia';
-	$labels->add_new = 'Añadir Notícia';
-	$labels->add_new_item = 'Añadir Notícia';
-	$labels->edit_item = 'Editar Notícia';
-	$labels->new_item = 'Notícia';
-	$labels->view_item = 'Ver Notícia';
-	$labels->search_items = 'Buscar Notícias';
-	$labels->not_found = 'No se encontraron Notícias';
-	$labels->not_found_in_trash = 'No se encontraron Notícias en la Papelera';
-}
-add_action('init', 'change_post_object_label');
-add_action('admin_menu', 'change_post_menu_label');
+	function change_post_object_label() {
+		global $wp_post_types;
+		$labels = &$wp_post_types['post']->labels;
+		$labels->name = 'Notícias';
+		$labels->singular_name = 'Notícia';
+		$labels->add_new = 'Añadir Notícia';
+		$labels->add_new_item = 'Añadir Notícia';
+		$labels->edit_item = 'Editar Notícia';
+		$labels->new_item = 'Notícia';
+		$labels->view_item = 'Ver Notícia';
+		$labels->search_items = 'Buscar Notícias';
+		$labels->not_found = 'No se encontraron Notícias';
+		$labels->not_found_in_trash = 'No se encontraron Notícias en la Papelera';
+	}
+	add_action('init', 'change_post_object_label');
+	add_action('admin_menu', 'change_post_menu_label');
 
-function html5blank_nav()
-{
-	wp_nav_menu(
-		array(
-			'theme_location'  => 'header-menu',
-			'menu'            => '',
-			'container'       => 'div',
-			'container_class' => 'menu-{menu slug}-container',
-			'container_id'    => '',
-			'menu_class'      => 'menu',
-			'menu_id'         => '',
-			'echo'            => true,
-			'fallback_cb'     => 'wp_page_menu',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'items_wrap'      => '<ul>%3$s</ul>',
-			'depth'           => 0,
-			'walker'          => ''
-		)
-	);
-}
+	function html5blank_nav()
+	{
+		wp_nav_menu(
+			array(
+				'theme_location'  => 'header-menu',
+				'menu'            => '',
+				'container'       => 'div',
+				'container_class' => 'menu-{menu slug}-container',
+				'container_id'    => '',
+				'menu_class'      => 'menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul>%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => ''
+				)
+			);
+	}
 
 // Load HTML5 Blank scripts (header.php)
-function html5blank_header_scripts()
-{
-	if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+	function html5blank_header_scripts()
+	{
+		if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
 		wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
@@ -222,11 +222,11 @@ if (function_exists('register_sidebar'))
 		'name' => __('Right', 'html5blank'),
 		'description' => __('this is the main right sidebar', 'html5blank'),
 		'id' => 'widgets-right',
-		'before_widget' => '<div id="%1$s" class="%2$s col-xs-12 single-widget">',
+		'before_widget' => '<div id="%1$s" class="%2$s single-widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
-	));
+		));
 	register_sidebar(array(
 		'name' => __('Bottom', 'html5blank'),
 		'description' => __('this is the main bottom sidebar', 'html5blank'),
@@ -235,7 +235,7 @@ if (function_exists('register_sidebar'))
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
-	));
+		));
 
 }
 
@@ -246,7 +246,7 @@ function my_remove_recent_comments_style()
 	remove_action('wp_head', array(
 		$wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
 		'recent_comments_style'
-	));
+		));
 }
 
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
@@ -261,7 +261,7 @@ function html5wp_pagination()
 		'total' => $wp_query->max_num_pages,
 		'prev_text'    => '<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>',
 		'next_text'    => '<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>'
-	));
+		));
 }
 
 // Custom Excerpts
@@ -378,40 +378,40 @@ function html5blankcomments($comment, $args, $depth)
 		$tag = 'li';
 		$add_below = 'div-comment';
 	}
-?>
-  <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-  <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-  <?php if ( 'div' != $args['style'] ) : ?>
-   <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-   <?php endif; ?>
-   <div class="comment-author vcard">
-     <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-     <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-   </div>
-   <?php if ($comment->comment_approved == '0') : ?>
-     <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-     <br />
-   <?php endif; ?>
+	?>
+	<!-- heads up: starting < for the html tag (li or div) in the next line: -->
+	<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' != $args['style'] ) : ?>
+		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+		<?php endif; ?>
+		<div class="comment-author vcard">
+			<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
+			<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+		</div>
+		<?php if ($comment->comment_approved == '0') : ?>
+			<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+			<br />
+		<?php endif; ?>
 
-   <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-<?php
-	printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-?>
-  </div>
+		<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+			<?php
+			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
+			?>
+		</div>
 
-  <?php comment_text() ?>
+		<?php comment_text() ?>
 
-  <div class="reply">
-   <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
- </div>
- <?php if ( 'div' != $args['style'] ) : ?>
- </div>
-<?php endif; ?>
-<?php }
+		<div class="reply">
+			<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		</div>
+		<?php if ( 'div' != $args['style'] ) : ?>
+		</div>
+	<?php endif; ?>
+	<?php }
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
-\*------------------------------------*/
+	\*------------------------------------*/
 
 // Add Actions
 // add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
@@ -467,7 +467,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 
 /*------------------------------------*\
 	Custom Post Types
-\*------------------------------------*/
+	\*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 // function create_post_type_html5()
@@ -509,11 +509,11 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 
 /*------------------------------------*\
 	ShortCode Functions
-\*------------------------------------*/
+	\*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
+	function html5_shortcode_demo($atts, $content = null)
+	{
 	return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
@@ -542,22 +542,41 @@ function mytheme_customize_register( $wp_customize ) {
 		// 'sanitize_callback'=> //Optional. A function name to call for sanitizing the input value for this setting. The function should be of the form of a standard filter function, where it accepts the input data and returns the sanitized data.
 		//'sanitize_js_callback'=>''//Optional. A function name to call for sanitizing the value for this setting for the purposes of outputting to javascript code. The function should be of the form of a standard filter function, where it accepts the input data and returns the sanitized data. This is only necessary if the data to be sent to the customizer window has a special form.
 
-	));
+		));
 	//Sections
 	$wp_customize->add_section( 'Footer' , array(
 		'title'      => __( 'Footer', 'html5blank' ),
 		'priority'   => 30,
 		'description' =>__( 'Everithing Related with Footer', 'html5blank' ),
-	) );
+		) );
 	add_action( 'customize_register', 'mytheme_customize_register' );
 	// controls
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
 		'label'        => __( 'Footer Text', 'html5blank' ),
 		'section'    => 'Footer',
 		'settings'   => 'footer_text',
-	) ) );
+		) ) );
 
 
+	function widget_nav_menu_modifications($nav_menu_args, $nav_menu, $args, $instance){
+		return $nav_menu_args=array(
+			'theme_location'  => 'bottom-menu',
+			'menu'    => 'bottom-menu',
+			// 'depth'             => 3,
+			'container'       => 'div',
+			'container_class' => 'collapse navbar-collapse',
+			'container_id'    => $id,
+			'menu_class'      => 'nav navbar-nav col-xs-12',
+			'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			'walker'            => new wp_bootstrap_navwalker()
+			);
+	};
+	add_filter('widget_nav_menu_args','widget_nav_menu_modifications',10,4);
+	}
 
+function get_terms_id_by_post_type( $taxonomies, $post_types ) {
+    global $wpdb;
+    $query = $wpdb->get_col( "SELECT t.term_id from $wpdb->terms AS t INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN $wpdb->term_relationships AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN $wpdb->posts AS p ON p.ID = r.object_id WHERE p.post_type IN('" . join( "', '", $post_types ) . "') AND tt.taxonomy IN('" . join( "', '", $taxonomies ) . "') GROUP BY t.term_id");
+    return $query;
 }
 ?>
