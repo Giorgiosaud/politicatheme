@@ -7,7 +7,7 @@ if($imagen==null){
 
 <!-- section -->
 
-<div class="container-flex Estudios__Container">
+<div class="container inner-container">
 	<div class="col-xs-12 col-sm-9">
 		<div class="col-xs-12">
 			<div class="Estudios__Imagen">

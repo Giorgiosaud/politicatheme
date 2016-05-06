@@ -17,6 +17,7 @@ elixir.config.publicPath='compiled';
  	.copy('bower_components/bootstrap-sass/assets/fonts/','compiled/fonts/')
  	.copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.js','resources/assets/js')
  	.copy('bower_components/jquery/dist/jquery.js','resources/assets/js')
+ 	.copy('bower_components/sweetalert/dist/sweetalert-dev.js','resources/assets/js')
  	.sass('sass.scss', 'resources/css',
  	{
  		includePaths:[
@@ -26,7 +27,7 @@ elixir.config.publicPath='compiled';
  	})
  	.stylus('app.styl','resources/css')
  	.styles(['sass.css','app.css'],null,'resources/css')
- 	.scripts(['jquery.js','bootstrap.js','main.js'])
+ 	.scripts(['jquery.js','bootstrap.js','calendar-zonapro.js','sweetalert-dev.js','serializeObject.js','main.js'])
  	.version(['css/all.css','js/all.js']);
  });
 

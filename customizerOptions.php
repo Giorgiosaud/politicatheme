@@ -10,6 +10,7 @@ class theme_customizer{
 	{
 		$this->wp=$wp_manager;
 		$this->footer_section();
+		$this->social_section( $wp_manager );
 		$this->news_section( $wp_manager );
 		$this->eventos_section( $wp_manager );
 		$this->docentes_section( $wp_manager );
@@ -70,31 +71,36 @@ class theme_customizer{
 			)
 		);
 	}
+	public function social_section()
+	{
+		$this->agregar_seccion('social','Configuracion de redes Sociales');
+		$this->agregar_control_texto('facebook_site','social','url de facebbok','#');
+	}
 	public function postgrado_section($wp)
 	{
 		$this->agregar_seccion('postgrado','Configuracion Postgrado');
 		$settings=array(
 			'default'      => get_template_directory_uri().'/img/imagen_postgrado_por_defecto.jpg',
-			'width'=>960,
-			'height'=>560
+			'width'=>820,
+			'height'=>350
 			);
 
 		$this->agregar_configuracion('imagen_postgrado',$settings);
-		$this->agregar_control_imagen_crop('imagen_postgrado','Imagen Superior Area Postgrado','imagen_postgrado','postgrado',900,560);
+		$this->agregar_control_imagen_crop('imagen_postgrado','Imagen Superior Area Postgrado','imagen_postgrado','postgrado',820,350);
 	}
 	public function pregrado_section($wp)
 	{
 		$this->agregar_seccion('pregrado','Configuracion Pregrado');
 		$settings=array(
 			'default'      => get_template_directory_uri().'/img/imagen_pregrado_por_defecto.jpg',
-			'width'=>960,
-			'height'=>560
+			'width'=>820,
+			'height'=>350
 			);
 		
 		$this->agregar_configuracion('imagen_pregrado',$settings);
 		$this->agregar_control_texto('texto_titulo_pregrado','pregrado','Texto Titulo Pregrado','PREGRADO');
 		$this->agregar_control_textarea('texto_pregrado','pregrado','Texto Intro Pregrado','La Facultad de Ciencias Políticas y Administración Pública de la Universidad Central de Chile imparte las carreras de Administración Pública y Ciencia Política.');
-		$this->agregar_control_imagen_crop('imagen_pregrado','Imagen Superior Area Pregrado','imagen_pregrado','pregrado',900,560);
+		$this->agregar_control_imagen_crop('imagen_pregrado','Imagen Superior Area Pregrado','imagen_pregrado','pregrado',820,350);
 	
 	}
 	public function publicaciones_section($wp_manager)

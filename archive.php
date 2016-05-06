@@ -2,7 +2,7 @@
 
 <!-- section -->
 
-<div class="container-flex Noticias__Internas__Container">
+<div class="container inner-container">
 	<div class="col-xs-12 col-sm-9">
 		<h1><?php single_cat_title(); ?></h1>
 		<?php get_template_part('loop-noticias'); ?>

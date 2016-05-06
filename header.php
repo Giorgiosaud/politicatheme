@@ -1,4 +1,5 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -13,6 +14,7 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 
 	<?php wp_head(); ?>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body <?php body_class(); ?>>
@@ -26,13 +28,18 @@
 				<?php top_nav(); ?>
 				<div class="clearfix"></div>
 			</nav>
-			<div class="container">
+			<div class="container FlexHeader">
 				<!-- logo -->
-				<div class="logo col-xs-12 col-sm-6">
+				<div class="logo">
 					<a href="<?php echo home_url(); ?>">
 						<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img img-responsive">
 					</a>
+				</div>
+				<div class="socials">
+					<div class="FacebookLink">
+						<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+					</div>
 				</div>
 			</div>
 			<!-- /logo -->

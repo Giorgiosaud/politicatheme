@@ -27,33 +27,48 @@
 				<!-- /post details -->
 
 				<?php the_content(); // Dynamic Content ?>
+				<?php
+				$images = get_field('imagenes');
+				if( $images ): ?>
+				<ul>
+					<?php foreach( $images as $image ): ?>
+						<li>
+							<a href="<?php echo $image['url']; ?>">
+								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+							<p><?php echo $image['caption']; ?></p>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
 
-				<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
-				<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
-				<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
 
-				<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+			<p><?php //_e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
 
-				<?php comments_template(); ?>
+			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-	<?php else: ?>
-
-		<!-- article -->
-		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+			<?php //comments_template(); ?>
 
 		</article>
 		<!-- /article -->
 
-	<?php endif; ?>
+	<?php endwhile; ?>
+
+<?php else: ?>
+
+	<!-- article -->
+	<article>
+
+		<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+
+	</article>
+	<!-- /article -->
+
+<?php endif; ?>
 
 </div>
 <div class="col-xs-12 col-sm-3 widgets-right">

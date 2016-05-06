@@ -24,10 +24,10 @@ class eventosgszp_widget_calendario extends WP_Widget {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		// before and after widget arguments are defined by themes
 		echo $args['before_widget'];
-		if ( ! empty( $title ) )
-		echo $args['before_title'] . $title . $args['after_title'];
+		// if ( ! empty( $title ) )
+		// echo $args['before_title'] . $title . $args['after_title'];
 		// This is where you run the code and display the output
-		echo __( 'Hello, World!', 'wpb_widget_domain' );
+		echo '<div class="widgetcalendario"></div>';
 		echo $args['after_widget'];
 	}
 	// 	$title = apply_filters( 'widget_title', $instance['title'] );

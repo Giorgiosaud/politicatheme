@@ -1,0 +1,61 @@
+.Zpcalendar
+	background: #eee
+	padding: 0.5em
+	float: left
+	width 100%
+	table
+		width 100%
+	.heading
+		display: flex
+		width: 100%
+		justify-content: space-around
+		background: #ccc
+		padding: 1em 0
+	.days
+		position: relative
+		width 100%
+	.weekend
+		color: #6fb5aa
+	.weekdays
+		background: #CCC
+		width 100%
+		padding 0.5em 0
+		table-layout fixed
+	.MesActual
+		position absolute
+		width 100%
+		z-index 2
+	.MesTemp
+		position: absolute
+		top: 0
+		width 100%
+		z-index 1
+	.calbut
+		width: 20px
+		height: 20px
+		background: #005676
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #ccc
+		cursor: pointer
+	td
+		table-layout:fixed
+		text-align: center
+		padding 0.5em 0
+		a
+			font-weight bolder
+	span
+		&.calbut
+			&.prev
+				padding: 0 1px 3px 0
+	span
+		&.calbut
+			&.next
+				padding: 0 2px 3px 3px
+
+
+
+
+

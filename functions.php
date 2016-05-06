@@ -9,6 +9,7 @@ require_once('customizerOptions.php');
 require_once('custom-posts/all.php');
 require_once('custom-taxonomies/all.php');
 require_once('widget/all.php');
+require_once('ajax.php');
 $i=new Initializer();
 /*
  *  Author: Todd Motto | @toddmotto
@@ -47,7 +48,8 @@ $i=new Initializer();
 		add_image_size('evento', 250, 150, true); 
 		add_image_size('publicacion', 250, 200, true); 
 		add_image_size('profesor', 250, 230, true);
-		add_image_size('mainPregrado',960,560,true);
+		add_image_size('mainPregrado',820,350,true);
+		add_image_size('mapa',440,250,true);
 	// Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',
@@ -169,6 +171,8 @@ function html5blank_styles()
 
 	wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
 	wp_enqueue_style('html5blank'); // Enqueue it!
+	wp_register_style('socicons', 'https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css', array(), '1.0', 'all');
+	wp_enqueue_style('socicons'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -222,7 +226,7 @@ if (function_exists('register_sidebar'))
 		'name' => __('Right', 'html5blank'),
 		'description' => __('this is the main right sidebar', 'html5blank'),
 		'id' => 'widgets-right',
-		'before_widget' => '<div id="%1$s" class="%2$s single-widget">',
+		'before_widget' => '<div id="%1$s" class="%2$s bottomSpace col-xs-12 No-Margin-Padding single-widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
@@ -231,7 +235,7 @@ if (function_exists('register_sidebar'))
 		'name' => __('Bottom', 'html5blank'),
 		'description' => __('this is the main bottom sidebar', 'html5blank'),
 		'id' => 'widgets-bottom',
-		'before_widget' => '<div id="%1$s" class="%2$s col-xs-12 col-sm-6">',
+		'before_widget' => '<div id="%1$s" class="%2$s bottomSpace col-xs-12 col-sm-6">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
@@ -415,7 +419,7 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 // add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+// add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu

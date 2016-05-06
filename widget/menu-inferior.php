@@ -54,10 +54,10 @@ class menuInferior extends WP_Widget {
 				</div>
 			</div>
 			<div class="menuInferior__Padre">
-				<div class="menuInferior__Padre__Titulo">
+				<div class="menuInferior__Padre__Titulo active">
 				<span class="glyphicon glyphicon-menu-right"></span><a href="/postgrado-y-educacion-continua/"><?= $tituloPostgrado ?></a>
 				</div>
-				<div class="menuInferior__Hijos">
+				<div class="menuInferior__Hijos active">
 					<div class="menuInferior__Hijo">
 						<a href="/tipo/pep/">Programa Ejecutivo para Profesionales (PEP)</a>
 					</div>

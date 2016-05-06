@@ -1,4 +1,4 @@
-<?php /* Template Name: Pagina Flex Interna */ 
+<?php /* Template Name: Pagina Flex Gallery */ 
 
 get_header(); ?>
 

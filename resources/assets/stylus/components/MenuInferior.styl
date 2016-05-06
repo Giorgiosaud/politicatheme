@@ -1,5 +1,8 @@
 .menuInferior
 	text-transform uppercase
+.menuInferior__Padre
+	margin-bottom: 0.5em
+	
 .menuInferior__Hijo
 	background: $menuAbajoShow
 	color: white
@@ -11,8 +14,6 @@
 	background: #4c76a0
 	color: white
 	padding: 0.5em
-	margin-bottom: 0.1em
-	margin-top: 0.3em
 	&>a
 		color #FFF
 	&>glyphicon
@@ -20,6 +21,9 @@
 .menuInferior__Hijos
 	margin-left: 1em
 	display none
+	margin-bottom: 0.5em
+	&.active
+		display block
 .menuInferior__Padre__Titulo:after, .menuInferior__Padre__Titulo:before
 	left: 100%
 	border: solid transparent
@@ -33,6 +37,7 @@
 	background: $menuAbajoHidden
 	&.active
 		background: $menuAbajoShow
+		margin-bottom: 0.3em
 		&:after
 			border-left-color: $menuAbajoShow
 	&:after

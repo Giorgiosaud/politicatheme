@@ -25,10 +25,12 @@ class Styles
 			switch ($extension) {
 			case 'css':
 				wp_register_style($enqueuefile,$enqueuefile);
+
 				wp_enqueue_style($enqueuefile);
 				break;
 			case 'js':
 				wp_register_script($enqueuefile, $enqueuefile);
+				wp_localize_script( $enqueuefile, 'Zonapro', array( 'url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'myajax-post-comment-nonce' )  ) );
 				wp_enqueue_script($enqueuefile);
 				break;
 			}

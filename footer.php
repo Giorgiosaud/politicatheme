@@ -1,8 +1,16 @@
 			<!-- footer -->
 			<footer class="footer text-center" role="contentinfo">
-				<?php echo get_theme_mod( 'footer_text_setting', '' )?>
-
-				<div class="clearfix"></div>
+				<div class="container">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+						<?php echo get_theme_mod( 'footer_text_setting', '' )?>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+					<div class="FacebookLink FaceFooter pull-right">
+							<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+						</div>
+					</div>
+				</div>
 			</footer>
 			<!-- /footer -->
 

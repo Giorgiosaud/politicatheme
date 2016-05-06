@@ -84,9 +84,14 @@ transform:rotate(-90deg)
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
 	background-color $azulActive
 }
-.menu-item.active{
+.menu-item.active
+	background: $azulPolitica;
+	background: -moz-linear-gradient(top,  $azulPolitica 50%, darken($azulPolitica,50) 160%);
+	background: -webkit-linear-gradient(top,  $azulPolitica 50%,darken($azulPolitica,50) 160%);
+	background: linear-gradient(to bottom,  $azulPolitica 50%,darken($azulPolitica,50) 160%);
+	
+.dropdown-menu>.menu-item.active
 	background-color $azulActive
-}
 .spec
 	float right
 	// display flex !important
