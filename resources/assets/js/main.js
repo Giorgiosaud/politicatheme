@@ -11,6 +11,12 @@ jQuery(document).ready(function($) {
     swal("Error En Formulario", data.responseText, "warning");
   });
 });
+  $('#mailchimpSubscription').submit(function(event) {
+   event.preventDefault();
+   $email=$('.Subscription__Form input[name="email"]').val();
+   console.log(isEmail($email));
+   return false;
+ });
   $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
@@ -48,7 +54,7 @@ jQuery(document).ready(function($) {
 
     var hijos=$(this).siblings('.menuInferior__Hijos'),
     check=hijos.is(":hidden");
-    if(check == true){
+    if(check === true){
       $(this).addClass('active').find('.glyphicon').animateRotate(90,'slow');
     }
     else{

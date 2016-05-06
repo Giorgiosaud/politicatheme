@@ -1,22 +1,22 @@
 (function( $ ){
 	function obtenerTablaDeDias(m,y){
-		let actualDay=1,
-		firstDay=new Date(y,m,1).getDay();
-		daysPerMonth=[31, (((y%4==0)&&(y%100!=0))||(y%400==0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+		var actualDay=1,
+		firstDay=new Date(y,m,1).getDay(),
+		NumberDayOfWeek=0,
 		tablaDias='<table><tr>',
-		NumberDayOfWeek=0;
+		daysPerMonth=[31, (((y%4===0)&&(y%100!==0))||(y%400===0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 		while(actualDay<=daysPerMonth[m]){
 
-			if(actualDay==1){
-				if(firstDay==0){
+			if(actualDay===1){
+				if(firstDay===0){
 					tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
 				}
 				else{
-					for (let i = 0; i <= firstDay-1; i++) {
+					for (var i = 0; i <= firstDay-1; i++) {
 						tablaDias+='<td class="null"></td>';
 						NumberDayOfWeek++;
 					}
-					if(NumberDayOfWeek==6||NumberDayOfWeek==0){
+					if(NumberDayOfWeek===6||NumberDayOfWeek===0){
 						
 						tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
 					}
@@ -32,10 +32,10 @@
 				actualDay++;
 			}
 			else{
-				if(NumberDayOfWeek==0){
-					tablaDias+='<tr>'
+				if(NumberDayOfWeek===0){
+					tablaDias+='<tr>';
 				}
-				if(NumberDayOfWeek==6||NumberDayOfWeek==0){
+				if(NumberDayOfWeek===6||NumberDayOfWeek===0){
 
 					tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
 				}
@@ -55,52 +55,52 @@
 		tablaDias+='</table>';
 
 		return tablaDias;
-	};
+	}
 	function agregarPostAlMes(m,y,ld){
 		$.getJSON(Zonapro.url, {nonce: Zonapro.nonce,action:'getEventos',month:m,year:y,lastDay:ld}, function(json, textStatus) {
 			console.log(json);
 			for (var i = 0; i < json.length; i++) {
-				let evento=json[i];
+				var evento=json[i];
 				$('.MesActual td[data-day="'+evento.fecha+'"]').contents().wrap('<a href="'+evento.link+'"></a>');
 			}
 
 		});
-	};
+	}
 	function initializer(calendar,date,months,daysShort){
 		$(calendar).addClass('Zpcalendar');
-		let wrapperHeading=$( "<div />" ).addClass( 'heading').appendTo( calendar )
+		var wrapperHeading=$( "<div />" ).addClass( 'heading').appendTo( calendar ),
 		prevButton=$('<span />').addClass('calbut prev').html('\&lang\;').appendTo(wrapperHeading),
 		startMonthNumber=date.getMonth(),
 		MonthNumber=("0" + (startMonthNumber + 1)).slice(-2),
 		startMonthText=months[startMonthNumber],
 		year=date.getFullYear(),
-		dayMonth=$('<span />').html(startMonthText+' '+year).addClass('MonthYear').appendTo(wrapperHeading);
-		nextButton=$('<span />').addClass('calbut next').html('\&rang\;').appendTo(wrapperHeading),
-		wrapperWeekDays=$( "<table />" ).addClass('weekdays').appendTo( calendar ),
-		contenedorDias=$( "<div />" ).addClass('days').appendTo( calendar ),
-		diasMesActual=$('<div />').addClass('MesActual').appendTo(contenedorDias),
-		tablaDias=obtenerTablaDeDias(startMonthNumber,year);
+		tablaDias=obtenerTablaDeDias(startMonthNumber,year),
+		daysPerMonth=[31, (((year%4===0)&&(year%100!==0))||(year%400===0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		var dayMonth=$('<span />').html(startMonthText+' '+year).addClass('MonthYear').appendTo(wrapperHeading);
+		var nextButton=$('<span />').addClass('calbut next').html('\&rang\;').appendTo(wrapperHeading);
+		var wrapperWeekDays=$( "<table />" ).addClass('weekdays').appendTo( calendar );
+		var contenedorDias=$( "<div />" ).addClass('days').appendTo( calendar );
+		var diasMesActual=$('<div />').addClass('MesActual').appendTo(contenedorDias);
 		$(tablaDias).appendTo(diasMesActual);
-		$('.days').height($('.MesActual').height())
-		daysPerMonth=[31, (((year%4==0)&&(year%100!=0))||(year%400==0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+		$('.days').height($('.MesActual').height());
 		agregarPostAlMes(MonthNumber,year,daysPerMonth[startMonthNumber]);
 		diasMesAnterior=$('<div />').addClass('MesTemp').appendTo(contenedorDias);
 		$(daysShort).each(function(){
 			$('<td />').text(this).appendTo(wrapperWeekDays);
 		});
-	};
+	}
 	function changeMonth(date,months){
-		let MonthNumber=date.getMonth(),
+		var MonthNumber=date.getMonth(),
 		MonthText=months[MonthNumber],
 		year=date.getFullYear();
 		$('.MonthYear').html(MonthText+' '+year);
-	};
+	}
 	function changeDays(date){
-		let year=date.getFullYear(),
+		var year=date.getFullYear(),
 		MonthNumber=date.getMonth(),
 		MonthNumber2=("0" + (date.getMonth() + 1)).slice(-2),
 		tablaDiasMes=obtenerTablaDeDias(MonthNumber,year),
-		daysPerMonth=[31, (((year%4==0)&&(year%100!=0))||(year%400==0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		daysPerMonth=[31, (((year%4===0)&&(year%100!==0))||(year%400===0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 		$(tablaDiasMes).appendTo($('.MesTemp'));
 		$('.MesActual').fadeOut('fast',function(){
 			$('.days').height($('.MesTemp').height());
@@ -109,13 +109,13 @@
 			$(this).remove();
 		});
 		agregarPostAlMes(MonthNumber2,year,daysPerMonth[MonthNumber]);
-	};
+	}
 	$.fn.Zpcalendar = function(options) {
-		let settings = $.extend( {}, $.fn.Zpcalendar.defaults, options );
+		var settings = $.extend( {}, $.fn.Zpcalendar.defaults, options );
 
 		return this.each(function() {
 			
-			let that=this,
+			var that=this,
 			date=settings.startDate,
 			months=settings.months,
 			daysShort=settings.weekDaysShort;
@@ -125,12 +125,12 @@
 				date.setMonth(date.getMonth() - 1);
 				changeMonth(date,months);
 				changeDays(date);
-			})
+			});
 			$('.next').on('click',function(){
 				date.setMonth(date.getMonth() + 1);
 				changeMonth(date,months);
 				changeDays(date);
-			})
+			});
 		});
 	};
 	$.fn.Zpcalendar.defaults={
@@ -149,5 +149,5 @@
 			},
 
 		},
-	}
+	};
 })( jQuery );

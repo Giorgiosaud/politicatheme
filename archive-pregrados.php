@@ -9,9 +9,9 @@ if($imagen==null){
 
 <div class="container inner-container">
 	<div class="col-xs-12 col-sm-9">
-		<div class="col-xs-12">
+		<div class="col-xs-12 No-Margin-Padding">
 			<div class="Estudios__Imagen">
-				<img src="<?= $imagen ?>" alt="Imagen Estudios Titulo" class="img-responsive">
+				<img src="<?= $imagen ?>" alt="Imagen Estudios Titulo" class="img-responsive full-width">
 				<div class="Estudios__Titulo">
 					<?= get_theme_mod('texto_titulo_pregrado','PREGRADO')?>
 				</div>

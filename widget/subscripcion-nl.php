@@ -41,8 +41,9 @@ class subscripcion extends WP_Widget {
 						Suscríbete a Nuestro Newsletter
 					</div>
 					<div class="Subscription__Form">
-						<form action="">
-						<input type="email" name="email" id="email"><input type="submit">
+						<form id="mailchimpSubscription" action="">
+						<input type="email" name="email" id="email">
+						<input type="submit" class="MailchimpSubscribe">
 						</form>
 					</div>				
 			</div>

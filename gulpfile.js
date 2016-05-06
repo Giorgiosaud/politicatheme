@@ -29,7 +29,7 @@ elixir.config.publicPath='compiled';
  	})
  	.stylus('app.styl','resources/css')
  	.styles(['sass.css','ekko-lightbox.css','app.css'],null,'resources/css')
- 	.browserify(['jquery.js','bootstrap.js','calendar-zonapro.js','sweetalert.min.js','serializeObject.js','ekko-lightbox.js','main.js'])
+ 	.scripts(['jquery.js','bootstrap.js','calendar-zonapro.js','sweetalert.min.js','serializeObject.js','ekko-lightbox.js','main.js'])
  	.version(['css/all.css','js/all.js']);
  });
 
