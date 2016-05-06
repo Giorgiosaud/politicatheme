@@ -50,6 +50,7 @@ $i=new Initializer();
 		add_image_size('profesor', 250, 230, true);
 		add_image_size('mainPregrado',820,350,true);
 		add_image_size('mapa',440,250,true);
+		add_image_size('galeria',250,180,true);
 	// Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',

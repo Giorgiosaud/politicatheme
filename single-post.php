@@ -21,25 +21,29 @@
 				<!-- /post title -->
 
 				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				<span class="date"><?php the_time('F j, Y'); ?> <?php //the_time('g:i a'); ?></span>
+				<!-- <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span> -->
+				<!-- <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span> -->
 				<!-- /post details -->
 
 				<?php the_content(); // Dynamic Content ?>
 				<?php
 				$images = get_field('imagenes');
 				if( $images ): ?>
-				<ul>
+				<div class="col-xs-12">
 					<?php foreach( $images as $image ): ?>
-						<li>
-							<a href="<?php echo $image['url']; ?>">
-								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<div class="ImagenGaleria">
+							<img class="img-responsive" src="<?php echo wp_get_attachment_image_src($image['ID'],'galeria')[0]; ?>" alt="<?php echo $image['alt']; ?>"  />
+							<a data-toggle="lightbox" data-remote="<?php echo $image['url']; ?>" data-gallery="Galeria">
+								<div class="Gallery__Hover">
+									<div class="Gallery__Caption">
+										<?=$image['caption'];?>
+									</div>
+								</div>
 							</a>
-							<p><?php echo $image['caption']; ?></p>
-						</li>
+						</div>
 					<?php endforeach; ?>
-				</ul>
+				</div>
 			<?php endif; ?>
 
 
@@ -95,7 +99,4 @@
 <!-- /section -->
 <div class="clearfix"></div>
 </div>
-
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

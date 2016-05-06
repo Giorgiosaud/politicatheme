@@ -29,7 +29,8 @@
   "dependencies": {
     "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
     "open-sans": "~1.1.0",
-    "open-sans-fontface": "~1.4.2"
+    "open-sans-fontface": "~1.4.2",
+    "ekko-lightbox": "^4.0.1"
   },
   "homepage": "http://politicaygobierno.cl",
   "private": true
