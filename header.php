@@ -28,17 +28,19 @@
 				<?php top_nav(); ?>
 				<div class="clearfix"></div>
 			</nav>
-			<div class="container FlexHeader">
-				<!-- logo -->
-				<div class="logo">
-					<a href="<?php echo home_url(); ?>">
-						<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img img-responsive">
-					</a>
-				</div>
-				<div class="socials">
-					<div class="FacebookLink">
-						<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+			<div class="container">
+				<div class="col-xs-12 FlexHeader">
+					<!-- logo -->
+					<div class="logo">
+						<a href="<?php echo home_url(); ?>">
+							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img img-responsive">
+						</a>
+					</div>
+					<div class="socials">
+						<div class="FacebookLink">
+							<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -7,10 +7,12 @@
  */
 function new_nav_menu_items($items, $args) {
     if($args->theme_location == 'main-menu'){
-       $BuscarField = '<li class="spec pull-right"><form class="navbar-form navbar-right form-inline" role="search">
-							<div class="form-group">
-								<label for="search">Buscar</label>
+       $BuscarField = '<li class="spec pull-right">
+       					<form class="navbar-form navbar-right form-inline" role="search">
+							<div class="form-group flex-group">
+								<label class="labelSearch" for="search">Buscar</label>
 								<input type="text" id="search" name="s" class="form-control">
+								<input type="submit" class="SearchButton" value="ir">
 							</div>
 						</form></li>';
        $items = $items . $BuscarField;

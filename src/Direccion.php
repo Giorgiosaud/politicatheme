@@ -24,7 +24,8 @@ class Direccion{
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<img src="<?= $this->imagen ?>" alt="Direccion" class="img-responsive">
+				<div id="map"></div>
+				<!-- <img src="<?= $this->imagen ?>" alt="Direccion" class="img-responsive"> -->
 			</div>
 		</div>
 		

@@ -51,6 +51,7 @@ $i=new Initializer();
 		add_image_size('mainPregrado',820,350,true);
 		add_image_size('mapa',440,250,true);
 		add_image_size('galeria',250,180,true);
+		
 	// Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',
@@ -74,7 +75,7 @@ $i=new Initializer();
 	add_theme_support('automatic-feed-links');
 
 	// Localisation Support
-	load_theme_textdomain('html5blank', get_template_directory() . '/languages');
+	load_theme_textdomain('politicaygobierno', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\

@@ -18,7 +18,9 @@ class PostgradoTipo{
 			$term = get_term( $this->tipo, $taxonomy );
 			$this->titulo=$term->name;
 		}
-		$args = new WP_Query( array(
+		
+
+		$args = array(
 			'post_type' => 'postgrados',
 			'tax_query' => array(
 				array(
@@ -27,20 +29,12 @@ class PostgradoTipo{
 					'terms' => $this->tipo
 					)
 				)
-			) );
-		// $args = array (
-		// 	'post_type'             => 'postgrados'
-		// 	'post_status'           => array( 'publish' ),
-		// 	'order'                 => 'DESC',
-		// 	'orderby'               => 'date',
-		// 	'cat'					=>$this->category,
-		// 	);
+			);
 		$this->postgrados=[];
 		$postgrados_query = new WP_Query( $args );
 		if ( $postgrados_query->have_posts() ) {
 			while ( $postgrados_query->have_posts() ) {
 				$postgrados_query->the_post();
-				// echo get_sub_field('imagen_noticia').'<br>';
 				$postgrado=new Postgrado(get_the_title(),get_permalink());
 				array_push($this->postgrados,$postgrado);
 			}

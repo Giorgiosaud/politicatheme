@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
   $('.widgetcalendario').Zpcalendar({
     weekDaysShort:['D','L','M','X','J','V','S']
   });

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -153,8 +153,7 @@ msgstr "No se han encontrado entradas personalizadas de HTML5 Blank"
 
 #: ../functions.php:449
 msgid "No HTML5 Blank Custom Posts found in Trash"
-msgstr ""
-"No se han encontrado entradas personalizadas de HTML5 Blank en la papelera"
+msgstr "No se han encontrado entradas personalizadas de HTML5 Blank en la papelera"
 
 #: ../index.php:6
 msgid "Latest Posts"
@@ -163,7 +162,7 @@ msgstr "Últimas entradas"
 #: ../search.php:6
 #, php-format
 msgid "%s Search Results for "
-msgstr "%s resultados resultados para"
+msgstr "%s resultados para "
 
 #: ../searchform.php:5
 msgid "Search"

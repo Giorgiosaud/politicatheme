@@ -58,12 +58,11 @@
 	}
 	function agregarPostAlMes(m,y,ld){
 		$.getJSON(Zonapro.url, {nonce: Zonapro.nonce,action:'getEventos',month:m,year:y,lastDay:ld}, function(json, textStatus) {
-			console.log(json);
 			for (var i = 0; i < json.length; i++) {
 				var evento=json[i];
-				$('.MesActual td[data-day="'+evento.fecha+'"]').contents().wrap('<a href="'+evento.link+'"></a>');
+				$('.MesActual td[data-day="'+evento.fecha+'"]').contents().wrap('<a data-toggle="tooltip" title="'+evento.titulo+'" href="'+evento.link+'"></a>');
 			}
-
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 	}
 	function initializer(calendar,date,months,daysShort){
