@@ -6,10 +6,11 @@
 		tablaDias='<table><tr>',
 		daysPerMonth=[31, (((y%4===0)&&(y%100!==0))||(y%400===0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 		while(actualDay<=daysPerMonth[m]){
+		var actualDay2=("0" + (actualDay)).slice(-2);
 
 			if(actualDay===1){
 				if(firstDay===0){
-					tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
+					tablaDias+='<td class="weekend" data-day="'+actualDay2+'">'+actualDay+'</td>';
 				}
 				else{
 					for (var i = 0; i <= firstDay-1; i++) {
@@ -18,10 +19,10 @@
 					}
 					if(NumberDayOfWeek===6||NumberDayOfWeek===0){
 						
-						tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
+						tablaDias+='<td class="weekend" data-day="'+actualDay2+'">'+actualDay+'</td>';
 					}
 					else{
-						tablaDias+='<td data-day="'+actualDay+'">'+actualDay+'</td>';
+						tablaDias+='<td data-day="'+actualDay2+'">'+actualDay+'</td>';
 					}
 					if(NumberDayOfWeek==6){
 						tablaDias+='</tr>';
@@ -37,10 +38,10 @@
 				}
 				if(NumberDayOfWeek===6||NumberDayOfWeek===0){
 
-					tablaDias+='<td class="weekend" data-day="'+actualDay+'">'+actualDay+'</td>';
+					tablaDias+='<td class="weekend" data-day="'+actualDay2+'">'+actualDay+'</td>';
 				}
 				else{
-					tablaDias+='<td data-day="'+actualDay+'">'+actualDay+'</td>';
+					tablaDias+='<td data-day="'+actualDay2+'">'+actualDay+'</td>';
 				}
 				if(NumberDayOfWeek==6){
 					tablaDias+='</tr>';
@@ -60,6 +61,7 @@
 		$.getJSON(Zonapro.url, {nonce: Zonapro.nonce,action:'getEventos',month:m,year:y,lastDay:ld}, function(json, textStatus) {
 			for (var i = 0; i < json.length; i++) {
 				var evento=json[i];
+				console.log(evento);
 				$('.MesActual td[data-day="'+evento.fecha+'"]').contents().wrap('<a data-toggle="tooltip" title="'+evento.titulo+'" href="'+evento.link+'"></a>');
 			}
 			$('[data-toggle="tooltip"]').tooltip();
