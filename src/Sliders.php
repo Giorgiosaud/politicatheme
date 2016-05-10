@@ -35,7 +35,8 @@ class Sliders{
 		if ( $slider_posts_query->have_posts() ) {
 			while ( $slider_posts_query->have_posts() ) {
 				$slider_posts_query->the_post();
-				$slide=new Slide(get_field('titulo_slide'),get_field('subtitulo_slide'),get_field('imagen_slider'),get_permalink());
+				$cat=get_the_category()[0]->name;
+				$slide=new Slide($cat,get_field('titulo_slide'),get_field('imagen_slider'),get_permalink());
 				array_push($this->slides,$slide);
 			}
 		} else {
@@ -70,8 +71,8 @@ class Sliders{
 							<div class="item <?php if($key==0) {echo 'active';} ?>" data-item="<?php echo $key ?>">
 								<img src="<?php echo $slide->image ?>" alt="<?php echo $slide->title ?>">
 								<div class="carousel-caption">
-									<div class="title"><?php _e( 'Noticias de la Facultad', 'html5blank' );?></div>
-									<div class="subtitle"><?php echo $slide->subtitle ?> <a href="<?php echo $slide->link ?>">Ver Más...</a></div>
+									<div class="title"><?php echo $slide->title ?></div>
+									<div class="subtitle col-xs-12"><?php echo $slide->subtitle ?> <a href="<?php echo $slide->link ?>">Ver Más...</a></div>
 								</div>
 							</div>
 							<?php
@@ -97,7 +98,7 @@ class Sliders{
 						?>
 						<div class="Slider__Noticias__Titulo Flex--1 <?php if($key==0) {echo 'active';} ?>" data-item="<?php echo $key ?>">
 							<div class="Slider__Noticias__Titulo__Intenro">
-								<?php echo $slide->title?>
+								<?php echo $slide->subtitle?>
 							</div>
 						</div>
 						<?php
@@ -154,7 +155,7 @@ class Sliders{
 								<img src="<?php echo $slide->image ?>" alt="<?php echo $slide->title ?>">
 								<div class="carousel-caption">
 									<div class="title"><?php echo $slide->title;?></div>
-									<div class="subtitle"><?php echo $slide->subtitle ?> <a href="<?php echo $slide->link ?>">Ver Más...</a></div>
+									<div class="subtitle col-xs-12"><?php echo $slide->subtitle ?> <a href="<?php echo $slide->link ?>">Ver Más...</a></div>
 								</div>
 							</div>
 							<?php
