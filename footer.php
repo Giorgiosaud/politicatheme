@@ -8,7 +8,8 @@
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="FacebookLink FaceFooter pull-right">
-								<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+								<a href="<?= get_theme_mod('facebook_site','<p class="copyright">Universidad Central de Chile • Todos los derechos reservados</p>
+<p>Edificio Vicente Kovacevic II • Avenida Santa Isabel 1278, Santiago de Chile</p><p>Fono: <a href="tel:+5625826601">(+56 2) 582 6601</a> • <a href="mailto:politicaygobierno@ucentral.cl">politicaygobierno@ucentral.cl </a></p>')?>"><i class="socicon-facebook"></i></a>
 							</div>
 						</div>
 					</div>

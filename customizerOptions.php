@@ -242,7 +242,8 @@ class theme_customizer{
 		) );
 		// Add a text editor control
 		$this->wp->add_setting( 'footer_text_setting', array(
-			'default'        => '',
+			'default'        => '<p class="copyright">Universidad Central de Chile • Todos los derechos reservados</p>
+<p>Edificio Vicente Kovacevic II • Avenida Santa Isabel 1278, Santiago de Chile</p><p>Fono: <a href="tel:+5625826601">(+56 2) 582 6601</a> • <a href="mailto:politicaygobierno@ucentral.cl">politicaygobierno@ucentral.cl </a></p>',
 		) );
 		$this->wp->add_control( new WP_Customize_Control( $this->wp, 'footer_text_setting', array(
 			'label'   => 'Footer Text Setting',
