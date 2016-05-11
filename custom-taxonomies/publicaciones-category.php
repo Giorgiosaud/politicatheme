@@ -30,7 +30,7 @@
  			);
  		$args = array(
  			'labels'                     => $labels,
- 			'hierarchical'               => false,
+ 			'hierarchical'               => true,
  			'public'                     => true,
  			'show_ui'                    => true,
  			'show_admin_column'          => true,
