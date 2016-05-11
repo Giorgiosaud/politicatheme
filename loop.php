@@ -7,12 +7,12 @@ if (have_posts()):
 		the_post(); 
 	?>
 
-	<div class="col-xs-12">
+	<div class="col-xs-12 Noticia">
 		<div class="Archivo__imagen">
 			<?php the_post_thumbnail()?>
 		</div>
 		<div class="Titulo">
-			<?php the_title() ?>
+			<h1><?php the_title() ?></h1>
 		</div>
 		<div class="Resumen text-justify">
 			<?php politica_excerpt('noticias_exp_length','noticias_more') ?>

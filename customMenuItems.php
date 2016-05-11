@@ -8,7 +8,7 @@
 function new_nav_menu_items($items, $args) {
     if($args->theme_location == 'main-menu'){
        $BuscarField = '<li class="spec pull-right">
-       					<form class="navbar-form navbar-right form-inline" role="search">
+       					<form class="navbar-form navbar-right form-inline" action="'.get_home_url('').'" role="search">
 							<div class="form-group flex-group">
 								<label class="labelSearch" for="search">Buscar</label>
 								<input type="text" id="search" name="s" class="form-control">

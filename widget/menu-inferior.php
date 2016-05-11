@@ -59,16 +59,16 @@ class menuInferior extends WP_Widget {
 				</div>
 				<div class="menuInferior__Hijos active">
 					<div class="menuInferior__Hijo">
-						<a href="/tipo/pep/">Programa Ejecutivo para Profesionales (PEP)</a>
+						<a href="<?php home_url( '');?>/tipo/pep/">Programa Ejecutivo para Profesionales (PEP)</a>
 					</div>
 					<div class="menuInferior__Hijo">
-						<a href="/tipo/magister/">Magíster</a>
+						<a href="<?php home_url( '');?>/tipo/magister/">Magíster</a>
 					</div>
 					<div class="menuInferior__Hijo">
-						<a href="/tipo/diplomados/">Diplomados</a>
+						<a href="<?php home_url( '');?>/tipo/diplomados/">Diplomados</a>
 					</div>
 					<div class="menuInferior__Hijo">
-						<a href="/tipo/postitulos/">Postitulos</a>
+						<a href="<?php home_url( '');?>/tipo/postitulos/">Postitulos</a>
 					</div>
 				</div>
 			</div>

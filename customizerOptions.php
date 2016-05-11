@@ -76,6 +76,11 @@ class theme_customizer{
 		$this->agregar_seccion('social','Configuracion de redes Sociales');
 		$this->agregar_control_texto('facebook_site','social','url de facebbok','#');
 	}
+	public function contactos_section()
+	{
+		$this->agregar_seccion('contactos','Configuracion de Contáctos');
+		$this->agregar_control_texto('email_to','contactos','email para recibir contactos','');
+	}
 	public function postgrado_section($wp)
 	{
 		$this->agregar_seccion('postgrado','Configuracion Postgrado');

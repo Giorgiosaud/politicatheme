@@ -32,8 +32,9 @@ if (have_posts()):
 			</div>
 			<div class="Publicacion__titulo">
 				<?php the_title()?>
+				<?php if(get_field('fecha_publicacion')!=''){?>
 				<span class="fecha"><?php echo date_i18n('F Y',DateTime::createFromFormat('!d/m/Y', get_field('fecha_publicacion'))->getTimestamp()) ?></span>
-				
+				<?php }?>
 			</div>
 			<div class="Publicacion__resumen">
 				<?php politica_excerpt('publicacion_exp_length','noticias_more') ?>
