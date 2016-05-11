@@ -1,5 +1,15 @@
 <?php
 require(__DIR__.'/../Navwalkers/wp_bootstrap_navwalker.php');
+function cat_nav($menu)
+{
+	$opts=array(
+		'theme_location'  => $menu,
+		'menu'    => $menu,
+        );
+	wp_nav_menu(
+		$opts
+		);
+}
 function top_nav($id,$align='left')
 {
 	$opts=array(

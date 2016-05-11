@@ -25,6 +25,8 @@ class Menus{
         	'top-menu' => __('Top Menu', 'html5blank'), // Top Navigation
   			'main-menu'=>__('Main Menu', 'html5blank'), // Main Navigation
   			'bottom-menu'=>__('Bottom Menu', 'html5blank'), // Main Navigation
+  			'publicaciones-menu'=>__('Tipos de Publicaciones', 'html5blank'), // Main Navigation
+  			'eventos-menu'=>__('Tipos de Eventos', 'html5blank'), // Main Navigation
 
   		));
 	}
