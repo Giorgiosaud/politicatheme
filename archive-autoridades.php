@@ -14,5 +14,5 @@
 	</div>
 	<div class="clearfix"></div>
 </div>
-	</div>
-	<?php get_footer(); ?>
+</div>
+<?php get_footer(); ?>

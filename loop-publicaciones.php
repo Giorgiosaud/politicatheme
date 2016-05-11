@@ -25,14 +25,14 @@ if (have_posts()):
 
 	?>
 
-	<div class="col-xs-12 col-sm-4 publicacion">
+	<div class="col-xs-12 col-sm-4 Publicacion">
 		<div class="Publicacion__Elemento">
 			<div class="Publicacion__imagen">
 				<img src="<?php echo $imagen ?>" alt="imagen"> 
 			</div>
 			<div class="Publicacion__titulo">
 				<?php the_title()?>
-				<span class="fecha"><?php echo date_i18n('F Y',strtotime(get_field('fecha_Publicacion'))) ?></span>
+				<span class="fecha"><?php echo date_i18n('F Y',DateTime::createFromFormat('!d/m/Y', get_field('fecha_publicacion'))->getTimestamp()) ?></span>
 				
 			</div>
 			<div class="Publicacion__resumen">
