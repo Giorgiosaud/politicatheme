@@ -47,24 +47,24 @@
 </div>
 <div class="col-xs-12 col-sm-3 widgets-right">
 	<?php $cats=get_categories(array('taxonomy'=>'events_cat'));
-		?>
-		<div class="Noticias__Internas__Categorias">
-			<div class="Noticias__Internas__Categorias__Titulo">
-				Categorías
-			</div>
-			<div class="Noticias__Internas__Categorias__Lista">
-				<ul>
-					<?php foreach($cats as $cat){
-						?>
-						<li><a href="<?php echo get_term_link($cat->term_id)?>"><?php echo $cat->name ?></a></li>
-						<?php
-					}?>
-				</ul>
-			</div>
-			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
-				[no widgets Right Panel]
-			<?php endif; ?>
+	?>
+	<div class="Noticias__Internas__Categorias">
+		<div class="Noticias__Internas__Categorias__Titulo">
+			Categorías
 		</div>
+		<div class="Noticias__Internas__Categorias__Lista">
+			<ul>
+				<?php foreach($cats as $cat){
+					?>
+					<li><a href="<?php echo get_term_link($cat->term_id)?>"><?php echo $cat->name ?></a></li>
+					<?php
+				}?>
+			</ul>
+		</div>
+	</div>
+	<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('widgets-right')) : ?>
+		[no widgets Right Panel]
+	<?php endif; ?>
 </div>
 </div>
 <!-- /section -->
