@@ -9,6 +9,7 @@ class theme_customizer{
 	public function customize_manager_demo( $wp_manager )
 	{
 		$this->wp=$wp_manager;
+		$this->contactos_section();
 		$this->footer_section();
 		$this->social_section( $wp_manager );
 		$this->news_section( $wp_manager );

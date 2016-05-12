@@ -37,8 +37,8 @@
 			<?php the_content(); // Dynamic Content ?>
 
 			<div class="clearfix"></div>
-			<h1>Curriculum:</h1>
 			<?php if( have_rows('curriculum') ):?>
+			<h1>Curriculum:</h1>
 				<ul>
 					<?	// loop through the rows of data
 					$CantidadElementosCurriculum=0;

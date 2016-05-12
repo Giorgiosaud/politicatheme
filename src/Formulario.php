@@ -13,7 +13,7 @@ class Formulario{
 		<div class="Formulario__Texto col-xs-12">
 		<?= $this->mensajeSuperior?>
 		</div>
-		<form action="">
+		<form action="" id="FormularioDeContacto">
 			<div class="Formulario__Flex_form">
 				<div class="Formulario__flexForm_1">
 					<div class="form-group">

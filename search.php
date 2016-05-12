@@ -2,7 +2,7 @@
 <div class="container <?php if(!is_home()){?>inner-container<?}?>">
 	<div class="col-xs-12 col-sm-9">
 	
-			<h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+			<h1><?php echo sprintf( __( '%s Resultados de Busqueda para ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 

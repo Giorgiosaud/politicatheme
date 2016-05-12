@@ -3,13 +3,18 @@ jQuery(document).ready(function($) {
   $('.widgetcalendario').Zpcalendar({
     weekDaysShort:['D','L','M','X','J','V','S']
   });
-  $('.EnviarEmail').click(function(event) {
+  $('#FormularioDeContacto').submit(function(event) {
    event.preventDefault();
+   $('.EnviarEmail').addClass('disabled').attr('disabled','disabled');
+
    $.post(Zonapro.url, {data:$(this).closest('form').serializeObject(),action:'sendEmail'}, function(data, textStatus, xhr) {
     swal("Correo Enviado", "Muchas Gracias Pronto lo contactaremos", "success");
     console.info(data);
+    $('.EnviarEmail').removeClass('disabled').removeAttr("disabled");
+
   }).fail(function(data){
     swal("Error En Formulario", data.responseText, "warning");
+    $('.EnviarEmail').removeClass('disabled').removeAttr("disabled");  
   });
 });
   $('#mailchimpSubscription').submit(function(event) {

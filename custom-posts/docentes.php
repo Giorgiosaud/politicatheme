@@ -39,7 +39,7 @@ class DocentesCustomPost{
 		'label'                 => __( 'Docente', 'politicaygobierno' ),
 		'description'           => __( 'Docentes de la Facultad', 'politicaygobierno' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', ),
+		'supports'              => array( 'title', 'revisions','editor' ),
 		'taxonomies'            => array(  'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
