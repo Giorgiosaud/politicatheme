@@ -1,6 +1,5 @@
 .navbar{
 	margin-bottom 0
-	font-size 0.7em
 }
 ul
 	&.dropdown-menu
@@ -9,6 +8,7 @@ ul
 	background-color $azulPolitica
 	border-color darken($azulPolitica,10)
 	border-radius 0
+	font-size 0.8em
 }
 .navbar-nav > li > a {
 	// background-color: #e7e7e7;
@@ -92,31 +92,51 @@ transform:rotate(-90deg)
 	
 .dropdown-menu>.menu-item.active
 	background-color $azulActive
-.spec
-	float right
-	// display flex !important
-	#menu-main-menu
+.FlexHeader
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	.logo,.Searcher
 		width 100%
-		.menu-item
-			.active
-				background-color $azulActive
-			a
-	.form-inline
-		// display flex
-		// flex 1
-	& >.navbar-form
-		& > .form-group
-			& > label
-				color: white
-				text-transform: uppercase
-				font-weight: 500
-			& > .form-control
-				border-radius: 0
-				margin: 0 0 0 1em
-				border: none
-				background: $azulPoliticaOscura
-				color: white
+		aligin-items center
+		justify-content center
 
+.Searcher
+	flex 4
+	.spec
+		float right
+		width 100%
+		// display flex !important
+		#menu-main-menu
+			width 100%
+			.menu-item
+				.active
+					background-color $azulActive
+				a
+		.form-inline
+			width 100%
+			// display flex
+			// flex 1
+		& >.navbar-form
+			& > .form-group
+				& > label
+					color: white
+					text-transform: uppercase
+					font-weight: 500
+				& > .form-control
+					width 100%
+					border-radius: 0
+					margin: 0 0 0 1em
+					border: none
+					background: $grayCategory
+					color: white
+@media (min-width:760px)
+	.FlexHeader
+		flex-direction:row
+		.logo,.Searcher
+			width 100%
+			aligin-items center
+			justify-content space-between
 .SearchButton
 	background: #005677
 	color: #fff

@@ -2,18 +2,42 @@
 	padding 0
 .Subscription
 	background: $grisPublicacion
-	padding: 13px
 	margin-bottom 1em
 .Subscription__container
 	display: flex
-	border: solid $grisSubscripcion 1px
-	padding 20px 10px
-	align-items: center
+	padding 1em
+	align-items: baseline
+	flex-direction column
 
 .Subscription__Title
 	text-align: center
+	font-size 1.5em
+	font-weight lighter
 	color: $grisSubscripcion
-	text-transform uppercase
+
+.Subscription__SubTitle
+	a
+		color: $grisSubscripcion
+	&:hover
+		color ligthen($grisSubscripcion)
+.Subscription__Socials
+	display flex
+	margin-top 1.5em
+	a
+		background $grisSubscripcion
+		color #FFF
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		margin: 0.5em;
+		display: flex;
+		flex-direction: column;
+
+		&:hover
+			color $grisSubscripcion
+			background #FFF
 
 .Subscription__Form
 	width: 370px

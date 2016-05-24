@@ -585,4 +585,9 @@ function get_terms_id_by_post_type( $taxonomies, $post_types ) {
     $query = $wpdb->get_col( "SELECT t.term_id from $wpdb->terms AS t INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN $wpdb->term_relationships AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN $wpdb->posts AS p ON p.ID = r.object_id WHERE p.post_type IN('" . join( "', '", $post_types ) . "') AND tt.taxonomy IN('" . join( "', '", $taxonomies ) . "') GROUP BY t.term_id");
     return $query;
 }
+function add_socicon(){
+wp_register_style('socicons','https//file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css',null,null,'stylesheet');
+	wp_enqueue_style('socicons');
+}
+add_action( 'wp_enqueue_scripts', 'add_socicon' );
 ?>

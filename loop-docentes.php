@@ -3,6 +3,9 @@ if (have_posts()):
 	?>
 <div class="Docentes__Contenedor Docentes__Internos">
 	<?php
+	global $query_string;
+	$posts = query_posts($query_string .'&orderby=title&order=asc&posts_per_page=-1');
+//		wp_get_archives('type=postbypost&limit=1000&orderby=title&order=asc'); 
 	while (have_posts()):the_post(); 
 
 	if(get_field('foto')==null){

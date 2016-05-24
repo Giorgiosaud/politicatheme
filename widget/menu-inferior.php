@@ -41,7 +41,7 @@ class menuInferior extends WP_Widget {
 		<div class="menuInferior">
 			<div class="menuInferior__Padre">
 				<div class="menuInferior__Padre__Titulo">
-					<span class="glyphicon glyphicon-menu-right"></span><a href="/pregrado"><?= $tituloPregrado ?></a>
+					<span class="glyphicon glyphicon-menu-right"></span><a href="<?php echo site_url( '');?>/pregrado"><?= $tituloPregrado ?></a>
 				</div>
 				<div class="menuInferior__Hijos">
 					<?php foreach ($this->pregrados as $key => $pregrado) {
@@ -55,7 +55,7 @@ class menuInferior extends WP_Widget {
 			</div>
 			<div class="menuInferior__Padre">
 				<div class="menuInferior__Padre__Titulo active">
-				<span class="glyphicon glyphicon-menu-right"></span><a href="/postgrado-y-educacion-continua/"><?= $tituloPostgrado ?></a>
+				<span class="glyphicon glyphicon-menu-right"></span><a href="<?php echo site_url( '');?>/postgrado-y-educacion-continua/"><?= $tituloPostgrado ?></a>
 				</div>
 				<div class="menuInferior__Hijos active">
 					<div class="menuInferior__Hijo">

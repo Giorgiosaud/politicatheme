@@ -68,7 +68,7 @@ class Noticias{
 							<img src="<?php echo $noticia->imagen ?>" alt="imagen">
 						</div>
 						<div class="Noticia__titulo">
-							<?php echo $noticia->titulo ?>
+							<a href="<?php echo $noticia->link?>">	<?php echo $noticia->titulo ?></a>
 						</div>
 						<div class="Noticia__resumen">
 							<?php echo $noticia->resumen ?>
@@ -81,6 +81,8 @@ class Noticias{
 				}
 				?>
 				<div class="clearfix"></div>
+				<div class="Noticias__VerMas__Noticias">
+					<a href="<?php echo get_category_link($this->category[0]) ?>">Ver Más <?php echo $this->titulo?> >></a></div>
 			</div>
 		</div>
 		<?php

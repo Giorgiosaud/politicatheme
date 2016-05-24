@@ -105,8 +105,8 @@ function sendEmail(){
 		die();
 	}
 	$emailTo=get_theme_mod('email_to');
-	$subject='Contacto desde la Web';
-	$mensajeEmail="la persona de nombre: {$nombre} y RUT: {$rut} telefono: {$telefono} email:{$email} dejo este mensaje en la web: {$mensaje} ";
+	$subject="{$nombre} les Contacta desde la Web";
+	$mensajeEmail="<p><b>La persona de nombre:</b>{$nombre}</p><p><b>RUT:</b>{$rut}</p><p><b>telefono:</b>{$telefono}</p><p><b>email:</b><a href='mailto:{$email}'>{$email}</a></p><p><b>dejo este mensaje en la web:</b></p><p> {$mensaje}</p> ";
 	wp_mail($emailTo,$subject,$mensajeEmail);
 	die();
 }

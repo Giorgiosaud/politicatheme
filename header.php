@@ -45,24 +45,23 @@
 			</nav>
 
 
-<!-- 
 
-			<nav class="TopNav" role="navigation">
-				<?php top_nav('topNav'); ?>
-				<div class="clearfix"></div>
-			</nav> -->
 			<div class="container">
-				<div class="col-xs-12 FlexHeader">
+				<div class="col-xs-12 FlexHeader No-Margin-Padding">
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img img-responsive">
 						</a>
 					</div>
-					<div class="socials">
-						<div class="FacebookLink">
-							<a href="<?= get_theme_mod('facebook_site')?>"><i class="socicon-facebook"></i></a>
+					<div class="Searcher">
+					       <div class="spec">  
+						       <form class="navbar-form navbar-right form-inline" action="<?echo get_home_url('')?>" role="search">
+								<div class="form-group flex-group">
+									<input type="text" id="search" name="s" class="form-control">
+									<button type="submit" class="SearchButton"><span class="glyphicon glyphicon-search" aria-hidden="search"></span></button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

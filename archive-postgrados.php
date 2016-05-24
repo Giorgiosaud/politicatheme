@@ -13,11 +13,11 @@ if($imagen==null){
 			<div class="Estudios__Imagen">
 				<img src="<?= $imagen ?>" alt="Imagen Estudios Titulo" class="img-responsive full-width">
 				<div class="Estudios__Titulo">
-					<?= get_theme_mod('texto_titulo_postgrado','POSTGRADO')?>
+					<?= get_theme_mod('texto_titulo_postgrado','Postgrado y Educación Continua')?>
 				</div>
 			</div>
 			<div class="Estudios__Subtitulo">
-				
+				<?php politica_excerpt('noticias_exp_length','noticias_more') ?>
 			</div>
 		</div>
 		<?php get_template_part('loop','postgrados'); ?>
