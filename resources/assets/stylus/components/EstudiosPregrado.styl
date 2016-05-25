@@ -1,0 +1,107 @@
+.ArchivoPregrado__Contenedor{
+	display: flex;
+	width 100%
+	align-items: baseline;
+	justify-content: space-between;
+	flex-wrap wrap
+}
+.EstudioPregradosPregrado__Imagen {
+	position: relative;
+}
+.EstudioPregradosPregrado__Subtitulo {
+	margin:1.5em 0;
+	text-align:justify;
+	position: relative;
+}
+.EstudioPregrado__Resumen {
+	display: flex;
+	flex: 7;
+	padding: 1em 1em 1em 1em
+	margin: 0.5em 0
+	border: solid #DDD 1px
+	background: #eee
+	text-align justify
+	align-items: center
+}
+li.postgrado
+	list-style: none
+	text-align:justify
+	text-indent:-10px
+	&:before
+		content:'<< '
+		font-size .6em
+		color $azulHover
+.EstudioPregrado__Encabezado {
+	display flex;
+	align-items center
+	justify-content center
+	flex-direction column
+	color #FFF
+	flex: 3;
+	min-width: 300px
+	background: $azulHover
+}
+.EstudioPregradosPregrado__Titulo {
+	position: absolute;
+	top: 50%;
+	background: $azulConTransparencia
+	margin-left: 0.2em;
+	color: white;
+	padding: 0.2em;
+	font-size: 2.3em;
+	font-weight: bolder;
+	letter-spacing: 0.1em;
+	font-style: italic;
+}
+.EstudioPregrado__Titulo
+	font-size: 1.7em
+	font-weight: 600
+	font-style: italic
+	padding: 1em
+.btn-estudio
+	background: #FFF
+	border-radius: 0pc
+	color $azulHover
+	padding: 5px 10px
+	margin-bottom 1em
+
+.EstudioPregrado__Contenedor {
+	display: flex;
+	width: 98%;
+	min-width 300px;
+	margin-bottom 2em
+	flex-direction column
+}
+.EstudioPregrado__Triangulo{
+	display none
+}
+
+@media (min-width: 660px){
+	
+	.ArchivoPregrado__Contenedor{
+		align-items: baseline;
+		justify-content: space-between;
+	}
+	.EstudioPregrado__Contenedor {
+		width: 48%;
+		margin-bottom 2em
+		flex-direction column
+	}
+}
+/*    
+@media (min-width: 900px){
+    .EstudioPregrado__Contenedor{
+        flex-direction row
+    }
+    .EstudioPregrado__Resumen{
+        padding: 1em 1em 1em 12em
+    }
+    .EstudioPregrado__Triangulo{
+        display block
+        background: transparent
+        border-color: transparent transparent transparent $azulHover
+        border-style: solid
+        position absolute
+    }
+    }
+    */

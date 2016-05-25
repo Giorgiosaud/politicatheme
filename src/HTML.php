@@ -15,6 +15,7 @@ class HTML{
 		<div class="<?php if($this->class==''){	echo $this->class;}	else{?> col-xs-12<?	}?>">
 			<?= $this->content;?>
 
+		<div class="clearfix"></div>
 		</div>
 		<?php
 		$content=ob_get_clean();

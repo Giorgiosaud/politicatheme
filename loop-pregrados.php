@@ -1,23 +1,23 @@
 <?php 
 if (have_posts()):
 	?>
-<div class="Archivo__Contenedor">
+<div class="ArchivoPregrado__Contenedor">
 	<?php
 	while (have_posts()):
 		the_post(); 
 	?>
 
-	<div class="Estudio__Contenedor">
-		<div class="Estudio__Encabezado">
-			<div class="Estudio__Titulo">
+	<div class="EstudioPregrado__Contenedor">
+		<div class="EstudioPregrado__Encabezado">
+			<div class="EstudioPregrado__Titulo">
 				<?php the_title() ?>
 			</div>
 			<div class="BotonLeerMas btn btn-estudio">
 			<a href="<?php the_permalink() ?>">Ver Más</a>
 			</div>
 		</div>
-		<div class="Estudio__Triangulo"></div>
-		<div class="Estudio__Resumen">
+		<div class="EstudioPregrado__Triangulo"></div>
+		<div class="EstudioPregrado__Resumen">
 			<?php politica_excerpt('noticias_exp_length','noticias_more') ?>
 		</div>
 	</div>
